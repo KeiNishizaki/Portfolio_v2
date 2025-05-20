@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+
+    <head>
+
+        <title>NISHIZAKI　KEI</title>
+        
+        <meta charset="UTF-8">
+        <link href="css\indexstyle.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css\modal.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css\kurukuru.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+
+
+
+
+        <script type="text/javascript" src="js\about.js"></script>
+        <script type="text/javascript" src="js\workskip.js"></script>
+        <script type="text/javascript" src="js\min.js"></script>
+        <script type="text/javascript" src="js\roop.js" defer></script>
+
+        <!--modai機能のjs引用-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+        <!--アニメーション-->
+       <!-- Lightbox -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script> -->
+
+        <!-- アニメーション用 JavaScript（外部ファイル）-->
+        <script src="js/startWindow.js"></script> <!-- パスは環境に合わせて修正 -->
+
+
+    
+
+
+
+    </head>
+    <header>
+        <div id="cursor" class="cursor" style="opacity: 1; top: 450px; left: 2848px;"></div>
+
+    </header>
+
+        <body>
+
+
+            <div id="about"><!--最初は非表示-->
+
+
+                    
+                <div id="aboutInner" class="cf">
+                    <dl>
+                        <dt class="font">PROFILE :      </dt>
+                    
+                        <dd>西崎慧　　Nishizaki　Kei<br>
+                            和歌山県和歌山市　出身<br>
+                            和歌山大学システム工学部メディアデザインメジャー　卒業<br>
+                        </dd>
+                        
+                        <dt class="font">CONTACT :      </dt>
+                        <dd><a href="mailto:nszkki.19981116@gmail.com" target="_blank">nszkki.19981116@gmail.com</a></dd>
+                        
+                        <dt class="font">ADDRESS :      </dt>
+                        <dd class="last">大阪府大阪市<br>
+                        Osakashi, Osakafu Japan</dd>
+
+                    </dl>
+
+                    <div class="right"><img src="img\myimage.jpg" alt="" width="140"></div>
+
+                </div>
+
+
+
+            </div>
+
+        <div id ="wrapper">
+            <div id = "header">
+    
+                <h1 id="logo"><a href="index.html"><img src="img\nishizaki-logo.png" alt="Nishizaki s226186@wakayaam-u.ac.jp"></a></h1>
+                <div id="btnAbout" class="font">
+                <a href="javascript:clickBtn1()">About</a><!--about.jsから関数を呼ぶ-->
+                </div><!--aboutボタンを押すとプロフィール表示する-->
+
+                <div id="btnClose" class="font">
+                <a href="javascript:clickBtn1()">Close</a><!--about.jsから関数を呼ぶ-->
+                </div><!--closeボタンを押すとプロフィール非表示する-->
+
+
+            </div><!-- /#header -->
+
+            <!--作品を書く-->
+
+            
+        <div id="container">
+
+                <div id="articleContainer">
+                  <div class="section" id="section1"> 
+                    <div class="mv_title-top slide-in-left"> <!-- mv_title-top を追加 -->
+                      <p class="site_title">This is Kei Nishizaki's<br>Portfolio Website</p>
+                      <div class="typed_wrap">
+                        <p>
+                          <span id="typed-text" class="typed" data-text="I am a growing system integrator since 2021."></span>
+                        </p>   
+                      </div>  
+                    </div>
+                    <div class="mv_img fade-zoom-in">
+                      <img alt="visual" src="img/my_visual (1).png">
+                    </div>
+                  </div><!--section1-->
+                     
+
+                      <div class="section" id="section2"> 
+                        <div class="mv_title">
+                          <p class="site_title">Skills</p>
+                          <div class="typed_wrap">
+                            <p><span class="typed">私のできること</span></p>
+                          </div>  
+                        </div>
+
+                        <div class="skill-inner">
+                          <div class="skill-contents">
+                            <div class="skill-icon">
+                              <img alt="design" src="img/design_icon.png">
+                            </div>
+                            <h2>デザイン</h2>
+                            <p class="skill_desc">課題の本質を様々な切り口から洗い出し、筋道を立ててデザインしています。</p>
+                            <div class="tool-inner">
+                              <p class="tool">使用ツール</p>
+                              <p>Illustrator / Photoshop / XD</p>
+                            </div>
+                          </div>
+
+                          <div class="skill-contents">
+                            <div class="skill-icon">
+                              <img alt="coding" src="img/cording_icon.png">
+                            </div>
+                            <h2>コーディング</h2>
+                            <p class="skill_desc">HTML/CSS/jQueryでページを作成可能。見やすく保守性の高いコードを意識。</p>
+                            <div class="tool-inner">
+                              <p class="tool">使用ツール</p>
+                              <p>HTML / CSS / jQuery / GitHub / VSCode</p>
+                            </div>
+                          </div>
+
+                          <div class="skill-contents">
+                            <div class="skill-icon">
+                              <img alt="other" src="img/cording_icon.png">
+                            </div>
+                            <h2>その他</h2>
+                            <p class="skill_desc">MySQLなどバックエンド寄りの知識もあり、開発全体を俯瞰できます。</p>
+                            <div class="tool-inner">
+                              <p class="tool">使用ツール</p>
+                              <p>MySQL / Git / Dreamweaver</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="section" id="section3">
+                          
+                          <div class="mv_title">
+                              <p class="site_title">Carrer</p>
+                              <div class="typed_wrap">
+                                  <p>
+                                  <span class="typed">今までの経歴 </span>
+                                  </p>   
+                              </div>  
+                          </div>
+                          <ul class="timeline">
+                              <li>
+                                <p class="timeline-date">2021.03</p>
+                                <div class="timeline-content">
+                                  <p class="timeline-content-sentence">
+                                    和歌山大学システム工学部メディアデザインメジャーを卒業。<br>情報工学とそれを魅せるためのデザインについて勉強した。また、大学生活ではコンペ活動や硬式庭球部の活動を積極的に参加した。
+                                  </p>
+                                </div>
+                              </li>
+                              <li>
+                                <p class="timeline-date">2021.04</p>
+                                <div class="timeline-content">
+                                  <p class="timeline-content-sentence">
+                                    インフォコム株式会社へ入社し、エンタープライズ事業本部TGシステム部へ配属。<br>
+                                    大手メーカー企業向けのSIerとしてシステム開発やIT支援といった業務を経験していくこととなる。
+                                  </p>
+                                </div>
+                              </li>
+                              <li>
+                                <p class="timeline-date">2021.09</p>
+                                <div class="timeline-content">
+                                  <p class="timeline-content-sentence">
+                                    棚卸
+                                  </p>
+                                </div>
+                              </li>
+                              <li>
+                                <p class="timeline-date">2022.07</p>
+                                <div class="timeline-content">
+                                  <p class="timeline-content-sentence">
+                                    TFR技術支援
+                                  </p>
+                                </div>
+                              </li>
+                              <li>
+                                  <p class="timeline-date">2023.06</p>
+                                  <div class="timeline-content">
+                                    <p class="timeline-content-sentence">
+                                      ONE-SEED
+                                    </p>
+                                  </div>
+                                </li>
+                              <li>
+                                <p class="timeline-date">2024.9</p>
+                                <div class="timeline-content">
+                                  <p class="timeline-content-sentence">
+                                      プライシング
+                                  </p>
+                                </div>
+                              </li>
+                              <li>
+                                <p class="timeline-date">2025.06</p>
+                                <div class="timeline-content">
+                                  <p class="timeline-content-sentence">
+                                    RAG
+                                  </p>
+                                </div>
+                              </li>
+                            </ul>
+                        </div><!--section3-->
+
+                        <div class="section" id="section4">
+                          <div class="mv_title">
+                            <p class="site_title">Contents</p>
+                            <div class="typed_wrap">
+                              <p><span class="typed">本サイトでは各ページに多くのコンテンツを準備しています．</span></p>
+                            </div>
+                          </div>
+
+                          <div class="slider-container">
+                            <div class="slider-wrapper">
+                              <div class="slide"><a href="index.html"><img src="Title/TItle画面.jpg" alt=""><div class="caption">Title - 西崎慧のWeb紹介</div></a></div>
+                              <div class="slide"><a href="works.html"><img src="Title/TItle画面2.jpg" alt=""><div class="caption">Works - 制作した作品集</div></a></div>
+                              <div class="slide"><a href="Identity.html"><img src="Title/TItle画面3.jpg" alt=""><div class="caption">Identity - 西崎慧について</div></a></div>
+                              <div class="slide"><a href="labolatory.html"><img src="Title/TItle画面5.jpg" alt=""><div class="caption">Laboratory - 空間デザイン研究室</div></a></div>
+                              <div class="slide"><a href="club.html"><img src="club/大学での部活動1.jpg" alt=""><div class="caption">Club - 硬式テニス部</div></a></div>
+                            </div>
+
+                            <button class="nav prev">‹</button>
+                            <button class="nav next">›</button>
+                          </div>
+                        </div><!--section4-->
+
+                        <div class="section" id="section5">
+
+                        </div><!--section5-->
+
+                        <div class="section" id="section6">
+                                 
+                         </div><!--section6-->
+
+                        <div class="section" id="section7">
+                            
+                        </div><!--section7-->
+
+                        <div class="section" id="section8">
+                           
+                        </div><!--section8-->
+
+                        
+                        <div class="section" id="section9">
+                                      
+                         </div><!--section9-->
+
+                        <div class="section" id="section10">
+                                
+                        </div><!--section10-->
+
+                        <div class="section" id="section11">
+                            <!-- このsectionはfunction:up()が10の時戻るときのために空で必要 -->
+                        </div><!--section10-->
+
+
+
+
+                </div><!--articleContainer-->
+        </div>
+
+
+                    <ul id="gnav" class="font">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="works.html">Works</a></li>
+                        <li><a href="Identity.html">Identity</a></li>
+                        <li><a href="labolatory.html">Laboratory</a></li>
+                        <li><a href="club.html">Club</a></li> 
+                     </ul>
+
+            
+            </div><!--/#container-->
+                                            
+
+        </div><!--/#wrapper-->
+        <div class="col">
+            <a href="#top" class="scroll-up-box mr-120" id="page-top">
+                TOP
+            </a>
+        </div>
+        
+
+
+        </body>
+        
+
+        <footer>
+          <p>&copy; 2025 Kei Nishizaki. All rights reserved.</p>
+        </footer>
+
+
+
+</html>

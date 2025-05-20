@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+/*
+ *
+ * Usage: Base layout
+ *
+ * Name: style.css
+ *
+ */
+
+/* FONT size
+---------------------------------------------------------------------
+[ px ]	[ % ]
+10px 	83  %		19px 	158 %
+11px 	92  %		20px 	167 %
+12px 	100 %		21px 	175 %
+13px 	108 %		22px 	183 %
+14px 	117 %		23px 	192 %
+15px 	125 %		24px 	200 %
+16px 	133 %		25px 	208 %
+17px 	142 %		26px 	217 %
+18px 	150 %
+---------------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------
+Page layout
+--------------------
+
+-------------------------------------------------*/
+
+
+
+html,body   {height:100%;}
+body        {
+    
+    
+    /* background:#f0f4f4; */
+
+}
+
+
+
+#wrapper    {width:810px; margin:0 auto; padding:110px 0; position:relative;}
+
+.font  {font-family:'Economica'; font-size:108%; letter-spacing:0.1em;}
+
+
+
+
+
+/*---------------------------------------------------------------------
+Common parts
+---------------------------------------------------------------------*/
+/* about */
+#about  {background:#fff; position:fixed; left:0; top:0; z-index:999; width:100%; display:none;}
+    #aboutInner  {width:865px; margin:0 auto; padding:100px 0 90px 0;}
+        #aboutInner dl     {float:left; width:660px;}
+        #aboutInner dt     {width:105px; line-height:100%;}
+        #aboutInner dd     {margin:-16px 0 30px 105px;}
+        #aboutInner .last  {margin-bottom:0;}
+
+
+/* header */
+#header  {}
+    #logo      {position:fixed; top:125px; left:15%; z-index:900;}
+    #btnAbout  {background:url(../images/ic_arrow-y.gif) no-repeat 100% 50%; padding:0 25px 0 3px; position:fixed; top:28px; left:26px; cursor:pointer;}
+    #btnAbout.open  {background:url(../images/btn_close.gif) no-repeat 100% 50%; padding-right:25px;}
+
+
+/* container */
+#container  {}
+
+    /* articleContainer */
+    #articleContainer  {padding-left:150px;}
+        #articleContainer .section  {}
+        #articleContainer .hgroup   {text-align:right; margin-bottom:20px; font-size:83%; background:url(../images/line_title.gif) no-repeat 100% 0; padding-top:15px; line-height:100%;}
+            #articleContainer .hgroup h2  {font-weight:bold; margin-bottom:5px;}
+            #articleContainer .hgroup .cate,
+            #articleContainer .hgroup .date  {color:#999; margin-bottom:5px; font-family:'Economica'; font-size:108%; letter-spacing:0.1em;}
+
+        #articleContainer .section .article  {}
+            #articleContainer .section .article .works  {margin-bottom:55px;}
+            #articleContainer .section .article .works img  {max-width:660px;}
+            #articleContainer .section .article .entry_txt  {margin:-45px 0 55px 0; font-size:83%;}
+    
+    
+    /* pagenate */
+    .pagenate  {text-align:center; position:relative; width:100%;}
+        .pagenate .current,
+        .pagenate .page  {display:none;}
+        .pagenate .pages  {display:inline-block; padding:8px 0;}
+        .pagenate .previouspostslink,
+        .pagenate .nextpostslink  {position:absolute; top:0; padding:8px;}
+        .pagenate .previouspostslink  {left:40%;}
+        .pagenate .nextpostslink      {right:40%;}
+    
+
+    /* gnav */
+    #gnav  {position:fixed; bottom:31px; left:26px;}
+        #gnav li  {width:150px;}
+        #gnav a   {width:100%; display:block; padding:9px 0;}
+
+
+
+    /* lnav */
+    #lnav  {position:fixed; bottom:40px; right:30px;}
+        #lnav #pagetop  {padding:0 3px; margin-bottom:24px;}
+        #lnav li  {height:15px;}
+        #lnav li a  {display:block; overflow:hidden; height:0; padding-top:15px;}
+        #lnav #btnPrev  {margin-bottom:22px;}
+        #lnav #btnPrev a  {background:url(../images/btn_prev.gif) no-repeat 50% 5px;}
+        #lnav #btnNext a  {background:url(../images/btn_next.gif) no-repeat 50% 0;}
+        #lnav #btnPrev a:hover  {background-position:50% 0;}
+        #lnav #btnNext a:hover  {background-position:50% 5px;}
+
+
+
+
+
+

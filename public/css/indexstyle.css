@@ -160,6 +160,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* ← これを追加するのが重要！ */
 }
 .slide img {
   max-width: 100%;
@@ -173,14 +174,19 @@ ul {
 /* キャプション */
 .caption {
   position: absolute;
-  bottom: 10%;
+  bottom: 0;
   left: 0;
   width: 100%;
   color: white;
-  background: rgba(0,0,0,0.5);
-  padding: 0rem;
+  background: rgba(106, 106, 106, 0.5);
+  padding: 0.5rem;
   font-size: 1rem;
+  box-sizing: border-box;
 }
+css
+コピーする
+編集する
+
 
 /* ナビゲーション矢印 */
 .nav {

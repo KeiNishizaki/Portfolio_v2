@@ -28,8 +28,8 @@
 
         <!-- アニメーション用 JavaScript（外部ファイル）-->
         <script src="js/startWindow.js"></script> <!-- パスは環境に合わせて修正 -->
-
-
+        <!--ChatBot-->
+        <script src="./js/chatbot.js"></script>
     
 
 
@@ -69,7 +69,7 @@
         </div>
     </header>
 
-        <body>
+      <body>
 
         <div id ="wrapper">
             <div id = "header">
@@ -284,19 +284,41 @@
       </div>
 
 
-          <ul id="gnav" class="font">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="works.html">Works</a></li>
-              <li><a href="Identity.html">Identity</a></li>
-              <li><a href="labolatory.html">Laboratory</a></li>
-              <li><a href="club.html">Club</a></li> 
-          </ul>
+        <ul id="gnav" class="font">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="works.html">Projects</a></li>
+            <li><a href="Identity.html">Humanity</a></li>
+            <li><a href="labolatory.html">University</a></li>
+            <li><a href="club.html">Other</a></li> 
+        </ul>
 
             
           </div><!--/#container-->
                                             
 
         </div><!--/#wrapper-->
+
+
+        <div class="chat-Container">
+            <!-- ランチャーボタン -->
+            <button class="chat-launcher" id="chat-launcher" type="button"></button>
+
+            <!-- チャットウィンドウ -->
+            <div class="chat-box" id="chat-box">
+              <div class="chat-header">
+              AI ChatBot
+              <button class="close-button" id="close-button">×</button>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+              <input type="text" id="user-input" placeholder="質問してください..." />
+              <button onclick="sendMessage()">送信</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
         <div class="col">
             <a href="#top" class="scroll-up-box mr-120" id="page-top">
                 TOP

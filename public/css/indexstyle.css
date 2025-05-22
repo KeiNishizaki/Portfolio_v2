@@ -496,7 +496,24 @@ p.tool {
   cursor: pointer;
   z-index: 9999;
 }
+.message {
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 12px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
 
+.message.user {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.message.bot {
+  background-color: #eee;
+  align-self: flex-start;
+}
 /* ====================
    Back to Top Button
 ==================== */

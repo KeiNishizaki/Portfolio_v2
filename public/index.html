@@ -300,19 +300,19 @@
 
 
         <div class="chat-Container">
-            <!-- ランチャーボタン -->
-            <button class="chat-launcher" id="chat-launcher" type="button"></button>
+          <!-- ランチャーボタン -->
+          <button class="chat-launcher" id="chat-launcher" type="button"></button>
 
-            <!-- チャットウィンドウ -->
-            <div class="chat-box" id="chat-box">
-              <div class="chat-header">
+          <!-- チャットウィンドウ -->
+          <div class="chat-box" id="chat-box" style="display: none;">
+            <div class="chat-header">
               AI ChatBot
               <button class="close-button" id="close-button">×</button>
             </div>
             <div class="chat-messages" id="chat-messages"></div>
             <div class="chat-input">
               <input type="text" id="user-input" placeholder="質問してください..." />
-              <button onclick="sendMessage()">送信</button>
+              <button id="send-button" type="button">送信</button>
             </div>
           </div>
         </div>

@@ -65,32 +65,54 @@
 
                 <div id="articleContainer">
                     <div class="section" id="section1">
-                         </div><!--section1-->
+                    </div><!--section1-->
 
-                        <div class="section" id="section2">
-                            <div class="hgroup">
-                                    <h2>01.棚卸システムの開発</h2>
-                                    <p class="cate">大手素材メーカー国内向上における棚卸業務の業務改善を目指した新規システム開発</p>
-                                    <p class="date">2021.09～2022.5</p>
+                    <div class="section" id="section2">
+                        <!-- hgroup: テキスト左・画像右 -->
+                        <div class="hgroup row">
+                            <div class="text">
+                            <h2>01.棚卸システムの開発</h2>
+                            <p class="cate">大手素材メーカー国内向上における棚卸業務の業務改善を目指した新規システム開発</p>
+                            <p class="date">2021.09～2022.5</p>
+                            <h3>概要</h3>
+                            <p>棚卸業務の効率化と正確性向上を目的に、システムを設計・実装。リアルタイム在庫更新や自動化を実現。</p>
                             </div>
-                            <div class="article">
+                            <div class="image">
+                            <img src="img/projects/inventory_img.jpg" alt="棚卸システム" />
+                            </div>
+                        </div>
 
-                              <div class="works ch">
-                                  <a href="work\compe\常盤橋今昔物語1.jpg" data-lightbox="group"><img src="work\compe\常盤橋今昔物語1.jpg" width="660"></a>
-                                </div>
+                        <!-- content1: 画像左・テキスト右 -->
+                        <div class="content row reverse">
+                            <div class="image">
+                            <img src="img/projects/inventory_img.jpg" alt="使用技術" />
+                            </div>
+                            <div class="text">
+                            <h3>使用技術</h3>
+                            <ul>
+                                <li>Azure Functions</li>
+                                <li>Python</li>
+                                <li>SQL Server</li>
+                            </ul>
+                            <h3>ポイント</h3>
+                            <ul>
+                                <li>業務プロセスの可視化と標準化</li>
+                                <li>RFIDによる読み取りの自動化</li>
+                            </ul>
+                            </div>
+                        </div>
 
-                                <div class="works ch">
-                                <a href="work\compe\常盤橋今昔物語2.jpg" data-lightbox="group"><img src="work\compe\常盤橋今昔物語2.jpg" width="660"></a>
-                              </div>
-                             
-                                <div class="works ch">
-
-                                  <a href="work\compe\常盤橋今昔物語(説明).jpg" data-lightbox="group"><img src="work\compe\常盤橋今昔物語(説明).jpg" width="660"></a>
-
-                                </div>
-              
-                            </div>               
-                        </div><!--section2-->
+                        <!-- content2: テキスト左・画像右 -->
+                        <div class="content row">
+                            <div class="text">
+                            <h3>振り返り</h3>
+                            <p>現場とのコミュニケーションにより課題を可視化し、実用的なUIを実装できた点が成果。</p>
+                            </div>
+                            <div class="image">
+                            <img src="work/compe/常盤橋今昔物語2.jpg" alt="振り返り画像" />
+                            </div>
+                        </div>
+                        </div>
 
 
                          
@@ -105,27 +127,46 @@
                 <li><a href="club.html">Club</a></li>  
              </ul>
 
-            <div id="lnav" class="font">
-                    <div id="pagetop"><a href="#wrapper" class="scroll">Top</a></div>
-                    <ul>
-
-
-
-                        <!--このままやったらsection2までしか設定できてない。jsでsection+iでfor文で回す？-->
-
-
-                        <li id="btnPrev"><!--javascriptの関数表示--><a href="javascript:up('section')"><img src="img\btnprev.png" alt="" width=""/></a></li>
-                        <li id="btnNext"><!--javascriptの関数表示--><a href="javascript:down('section')"><img src="img\btnnext.png" alt="" width=""/></a></li>
-                    </ul>
-                </div>   
+          
             
             </div><!--/#container-->
                                             
 
         </div><!--/#wrapper-->
+        <div class="chat-Container">
+          <!-- ランチャーボタン -->
+          <button class="chat-launcher" id="chat-launcher" type="button"></button>
+
+          <!-- チャットウィンドウ -->
+          <div class="chat-box" id="chat-box" style="display: none;">
+            <div class="chat-header">
+              AI ChatBot
+              <button class="close-button" id="close-button">×</button>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+              <input type="text" id="user-input" placeholder="質問してください..." />
+              <button id="send-button" type="button">送信</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+        <div class="col">
+            <a href="#top" class="scroll-up-box mr-120" id="page-top">
+                TOP
+            </a>
+        </div>
+        
 
 
         </body>
+        
+
+        <footer>
+          <p>&copy; 2025 Kei Nishizaki. All rights reserved.</p>
+        </footer>
 
 
 </html>

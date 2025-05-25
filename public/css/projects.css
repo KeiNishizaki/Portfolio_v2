@@ -333,7 +333,7 @@ css
 }
 .timeline .timeline-date {
   min-width: 100px;
-  margin-right: 10px;
+  margin-right: 20px;
   text-align: right;
   font-size: 14px;
   color: #999;
@@ -567,11 +567,11 @@ p.tool {
 }
 #articleContainer .hgroup,
 #articleContainer .tgroup {
-  padding-top: 15px;
+  /* padding-top: 15px; */
   line-height: 100%;
 }
 #articleContainer .hgroup {
-  text-align: right;
+  /* text-align: right; */
 }
 #articleContainer .tgroup {
   text-align: left;
@@ -705,41 +705,6 @@ p.tool {
   .nav {
     font-size: 1.5rem;
     padding: 0.3rem 0.7rem;
-  }
-
-  .timeline {
-    margin: 40px 20px; /* 余白を縮小 */
-  }
-
-  .timeline li {
-    flex-direction: column; /* 横並びから縦並びへ */
-    align-items: flex-start;
-    margin-bottom: 2rem;
-  }
-
-  .timeline .timeline-date {
-    text-align: left;
-    font-size: 14px;
-    margin-bottom: 0.5rem;
-    margin-right: 0;
-  }
-
-  .timeline-content {
-    width: 100%;
-    margin-left: 0;
-    padding-left: 15px;
-    border-left: 3px solid #C2D1DB;
-  }
-
-  .timeline-content::before {
-    left: -11px; /* 少し左にずらして境界に合わせる */
-  }
-
-  .timeline-content-sentence {
-    margin-top: 1rem;
-    margin-left: 0;
-    font-size: 14px;
-    line-height: 1.6;
   }
 }
 

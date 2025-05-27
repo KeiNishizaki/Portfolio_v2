@@ -49,7 +49,7 @@ ul {
   position: relative;
   z-index: 2; /* 背景画像とオーバーレイより前面 */
   margin-left: 5%;
-  color: #000000;
+  color: #ffffff;
 }
 
 .mv_title-top .site_title::after {
@@ -93,7 +93,7 @@ ul {
 }
 .typed {
   font-size: 18px;
-  color: #3E4550;
+  color: #ffffff;
   letter-spacing: 0.1em;
   display: inline-block;
   position: relative;
@@ -124,7 +124,7 @@ ul {
   left: 0;
   width: 100%;      /* 親要素の幅いっぱい */
   height: 100%;     /* 親要素の高さいっぱい */
-  background-color: rgba(255, 255, 255, 0.8); /* 半透明の白 */
+  background-color: rgba(255, 255, 255, 0.3); /* 半透明の白 */
   z-index: 1;
   pointer-events: none; /* オーバーレイでクリック等を邪魔しない場合 */
 }
@@ -221,6 +221,59 @@ ul {
   margin-bottom: 100px;
   overflow: hidden;
 }
+/* セクション全体 */
+#section2 {
+  position: relative;
+  padding-left: 30px; /* 線と本文の間に余白 */
+}
+
+/* 左の縦線：初期状態では非表示（幅0） */
+#section2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0%;
+  width: 2.0px;
+  background: linear-gradient(to bottom, #545454, #ececec); /* スタイリッシュなグラデーション */
+  transition: height 4.0s ease-out;
+  border-radius: 2px;
+}
+
+/* 表示されたとき：線が下に伸びる */
+#section2.in-view::before {
+  height: 100%;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  display: block;
+  padding: 20px 0;
+  letter-spacing: 6px;
+  font-family: 'Noto Serif JP', serif;
+  color: #333;
+  text-align: left; /* 文字は左揃え */
+  width: fit-content; /* 見出しの幅を文字サイズに合わせる */
+  margin-left: 0; /* 左寄せ */
+  margin-right: auto; /* 右を自動で詰める */
+}
+
+.section-title::before {
+  content: "";
+  width: 2px;
+  height: calc(100% + 40px);
+  transform: rotate(34deg);
+  display: block;
+  position: absolute;
+  background: #d8dadb;
+  left: 50%; /* 中央に配置 */
+  top: -20px;
+  transform-origin: center;
+  z-index: -1;
+}
+
 
 .row {
   display: flex;

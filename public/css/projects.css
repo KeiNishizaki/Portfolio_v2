@@ -43,6 +43,100 @@ ul {
   padding: 0;
   position: relative;
 }
+
+/* タイトルを前面に表示 */
+.mv_title-top {
+  position: relative;
+  z-index: 2; /* 背景画像とオーバーレイより前面 */
+  margin-left: 5%;
+  color: #000000;
+}
+
+.mv_title-top .site_title::after {
+  display: none;
+  
+}
+.mv_title {
+  text-align: center;
+  margin: 80px 0 40px;
+  position: relative;
+}
+
+/* Projects のタイトル */
+.site_title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.site_title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 60px;
+  height: 4px;
+  background-color: #848484;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+.site_title:hover::after {
+  width: 100px;
+}
+.subtitle {
+  font-size: 1.5rem;
+}
+.typed_wrap p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  /* max-width: 500px; */
+}
+.typed {
+  font-size: 18px;
+  color: #3E4550;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  position: relative;
+}
+.typed::after {
+  content: '|';
+  animation: blink 2s step-end infinite;
+  margin-left: 5px;
+}
+@keyframes blink {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+/* 画像エリア */
+.mv_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+/* 白のオーバーレイ（bindup流） */
+#section1::before {
+  content: "";
+  position: absolute; /* 絶対配置にして親要素の左上に固定 */
+  top: 0;
+  left: 0;
+  width: 100%;      /* 親要素の幅いっぱい */
+  height: 100%;     /* 親要素の高さいっぱい */
+  background-color: rgba(255, 255, 255, 0.8); /* 半透明の白 */
+  z-index: 1;
+  pointer-events: none; /* オーバーレイでクリック等を邪魔しない場合 */
+}
+
+/* 背景画像自体 */
+.mv_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .font {
   font-family: 'PT Sans', 'Noto Sans JP', sans-serif;
   font-size: 100%;
@@ -117,6 +211,15 @@ ul {
 ==================== */
 .section {
   margin: 5rem 0;
+  position: relative;
+}
+#section1 {
+  display: flex;
+  position: relative;
+  height: 300px;
+  /* height: 100vh; */
+  margin-bottom: 100px;
+  overflow: hidden;
 }
 
 .row {
@@ -171,7 +274,7 @@ ul {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
   z-index: 10000;
   flex-direction: column;
   overflow: hidden;
@@ -361,7 +464,7 @@ ul {
 ==================== */
 .pagenate {
   text-align: center;
-  position: relative;
+  position: absolute;
   width: 100%;
 }
 .pagenate .current,
@@ -453,6 +556,27 @@ ul {
   100% { transform: translateX(0); }
 }
 @media screen and (max-width: 768px) {
+   #section1 {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .site_title {
+    font-size: 2rem;
+  }
+
+  .typed_wrap p {
+    font-size: 1rem;
+  }
+
+  .mv_img img {
+    max-width: 90%;
+  }
+  .mv_wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
   .caption {
     font-size: 0.8rem;
     padding: 0.5rem;

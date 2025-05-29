@@ -210,7 +210,7 @@ ul {
    Section Styling
 ==================== */
 .section {
-  margin: 5rem 0;
+  margin: 2rem 0;
   position: relative;
 }
 #section1 {
@@ -222,13 +222,14 @@ ul {
   overflow: hidden;
 }
 /* セクション全体 */
-#section2 {
+#section2,  #section3, #section4,  #section5{
   position: relative;
   padding-left: 30px; /* 線と本文の間に余白 */
+  margin-left: 30px;
 }
 
 /* 左の縦線：初期状態では非表示（幅0） */
-#section2::before {
+#section2::before, #section3::before, #section4::before, #section5::before {
   content: "";
   position: absolute;
   left: 0;
@@ -236,12 +237,12 @@ ul {
   height: 0%;
   width: 2.0px;
   background: linear-gradient(to bottom, #545454, #ececec); /* スタイリッシュなグラデーション */
-  transition: height 4.0s ease-out;
+  transition: height 5.0s ease-out;
   border-radius: 2px;
 }
 
 /* 表示されたとき：線が下に伸びる */
-#section2.in-view::before {
+#section2.in-view::before, #section3.in-view::before, #section4.in-view::before, #section5.in-view::before {
   height: 100%;
 }
 
@@ -492,6 +493,7 @@ ul {
 #articleContainer .tgroup h2 {
   font-weight: bold;
   margin-bottom: 5px;
+  
 }
 #articleContainer .cate,
 #articleContainer .date {

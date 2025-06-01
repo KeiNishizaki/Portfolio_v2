@@ -1,0 +1,402 @@
+@charset "utf-8";
+
+
+/*
+layoyt
+
+*/
+
+html,body   {
+    height:100%;
+}
+body        {
+    background: linear-gradient(-90deg, rgb(224, 244, 253), rgb(255, 255, 255)) fixed;
+
+
+}
+
+a:hover {
+    font-size: 1.5em;/*文字サイズ倍*/
+    font-weight: bold;
+  }
+
+a:link, a:visited, a:hover, a:active {
+    color: #696969;
+    text-decoration: none;
+  }
+
+
+
+
+
+#wrapper    {
+    width:810px;
+    margin:0 auto;
+    padding:110px 0;
+    position:relative;
+    }
+    .font  {
+        font-family:'Economica';
+        font-size:100%;
+        letter-spacing:0.1em;
+        }
+
+.right  {
+    float:right;
+    display:inline-block;
+    margin-top: 20px;/*写真の上の余白*/
+}
+
+
+/*---------------------------------------------------------------------
+Common parts
+*/
+
+/* ====================
+   About Section
+==================== */
+#about {
+  background: #e9e9e9;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+
+  /* スライド用アニメーション */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+/* 表示時に追加するクラス */
+#about.show {
+  max-height: 1000px;  /* 必要に応じて調整 */
+  opacity: 1;
+}
+
+#aboutInner {
+  width: 865px;
+  margin: 0 auto;
+  padding: 40px 0 30px;
+}
+#aboutInner dl {
+  float: left;
+  width: 660px;
+}
+#aboutInner dt {
+  width: 105px;
+  line-height: 100%;
+}
+#aboutInner dd {
+  margin: -20px 0 30px 105px;
+}
+#aboutInner .last {
+  margin-bottom: 50px;
+}#about.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*header*/
+
+
+
+#header {}
+
+#logo{
+    position:fixed; 
+    top:125px; 
+    left:5%; 
+    z-index:900;
+}
+
+#btnAbout  {
+    padding:0 25px 0 3px;
+    position:fixed; 
+    top:28px;
+    left:52px;
+    cursor:pointer;
+    }
+#btnAbout.open  {
+    padding-right:25px;
+    }
+#btnClose {
+    padding:0 25px 0 3px;
+    position:fixed; 
+    top:350px;
+    left:52px;
+    cursor:pointer;
+    display: none;
+    }
+#btnClose.open  {
+    padding-right:25px;
+    }
+
+
+
+/* container */
+#container  {}
+
+        /* articleContainer */
+            #articleContainer  {
+                padding-left:150px;
+            }
+            #articleContainer .hgroup   {
+                text-align:right;
+                 padding-top:15px; 
+                 line-height:100%;
+                }
+                #articleContainer .hgroup h2  {
+                    font-weight:bold;
+                    margin-bottom:5px;
+                }
+                #articleContainer .hgroup .cate,
+                #articleContainer .hgroup .date  {
+                    color:#999;
+                    margin-bottom:5px;
+                    font-family:'Economica';
+                    font-size:108%;
+                    letter-spacing:0.1em;
+                }
+
+
+                #articleContainer .tgroup   {
+                    text-align:left;
+                     padding-top:15px; 
+                     line-height:100%;
+                    }
+                    #articleContainer .tgroup h2  {
+                        font-weight:bold;
+                        margin-bottom:5px;
+                    }
+                    #articleContainer .tgroup .cate,
+                    #articleContainer .tgroup .date  {
+                        color:#999;
+                        margin-bottom:5px;
+                        font-family:'Economica';
+                        font-size:108%;
+                        letter-spacing:0.1em;
+                    }
+
+
+
+
+
+
+                #articleContainer .section .article  {}
+                #articleContainer .section .article .works  {
+                    margin-bottom:55px;
+                }
+                #articleContainer .section .article .works img  {
+                    max-width:660px;
+                }
+                #articleContainer .section .article .entry_txt  {
+                    margin:-45px 0 55px 0;
+                    font-size:83%;
+                    }
+
+        /*pagenate*/
+            .pagenate  {
+                text-align:center;
+                position:relative;
+                width:100%;
+                }
+            .pagenate .current,
+            .pagenate .page  {
+                display:none;
+            }
+            .pagenate .pages  {
+                display:inline-block;
+                padding:8px 0;
+            }
+            .pagenate .previouspostslink,
+            .pagenate .nextpostslink  {
+                position:absolute;
+                top:0; 
+                padding:8px;
+                }
+            .pagenate .previouspostslink  {
+                left:40%;
+            }
+            .pagenate .nextpostslink      {
+                right:40%;
+            }
+        
+
+        /* gnav */
+            #gnav  {
+                position:fixed;
+                bottom:31px;
+                 left:26px;
+                }
+                #gnav li  {
+                    list-style: none;
+                    width:150px;
+                }
+                #gnav a   {
+                    width:100%;
+                     display:block; 
+                     padding:9px 0;
+                    }
+
+        /* lnav */
+        #lnav  {
+            position:fixed;
+             bottom:40px;
+              right:60px;
+            }
+            #lnav #pagetop  {
+              
+                margin-bottom:-23%;
+                margin-left: 50%;
+                font-size: 25px;
+            }
+            #lnav li  {
+                height:15px;
+                list-style: none;
+            }
+
+
+            #lnav #btnPrev  {
+                margin-bottom:50px;
+                margin-left: 5%
+            }
+
+            #lnav #btnNext {
+
+                margin-bottom: 30px;
+                margin-left: 5%;
+            }
+
+            #lnav #btnPrev a  {
+                
+                
+            }
+            #lnav #btnNext a  {
+                
+                
+            }
+
+
+            #lnav #btnPrev a:hover  {
+                background-position:50% 0;
+            }
+            #lnav #btnNext  a:hover  {
+                background-position:50% 5px;
+
+            }
+
+
+ 
+            /*ここからフリップ機能*/
+            
+            /* .card {
+                position: relative;
+                width: 250px;
+            }
+            .card a {
+                display: block;
+            }
+            .card_reverse {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+
+            */
+            /*　表面の表示*/
+
+             /* .card_surface {
+                transform: rotateY(0deg);
+                transition: transform 300ms 150ms;
+            }
+            .card_reverse {
+                transform: rotateY(90deg);
+                transition: transform 300ms;
+            }
+              */
+
+            /* 裏面の表示 */
+            /* a:hover .card_surface {
+                transform:rotateY(90deg);
+                transition: transform 300ms;
+            }
+            a:hover .card_reverse {
+                transform:rotateY(0deg);
+                transition: transform 300ms 150ms;
+            } */ 
+
+
+            /*ホーム画面のスライドショー*/
+            .cp_cssslider {
+                overflow: hidden;
+            }
+            .cp_slide_item {
+                float: left;
+                position: relative;
+            }
+            .cp_slidewrapper {
+                width: 500%;/* slideの枚数×100% */
+                position: relative;
+                left: 0;
+                animation: slider 30s infinite ease;/* スピード */
+            }
+            @-webkit-keyframes slider {
+                /* 100%を枚数で割った%に割り振る */
+                0% {
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0);
+                    }
+                    20% {
+                    -webkit-transform: translateX(-660px);
+                    transform: translateX(-660px);
+                    }
+                    40% {
+                    -webkit-transform: translateX(-1320px);
+                    transform: translateX(-1320px);
+                    }
+                    60% {
+                    -webkit-transform: translateX(-1980px);
+                    transform: translateX(-1980px);
+                    }
+                    80% {
+                    -webkit-transform: translateX(-2600px);
+                    transform: translateX(-2640px);
+                    }
+                    100% {
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0);
+                    }
+            }
+            @keyframes slider {
+                               /* 100%を枚数で割った%に割り振る */
+                /* 100%を枚数で割った%に割り振る */
+                0% {
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0);
+                    }
+                    20% {
+                    -webkit-transform: translateX(-660px);
+                    transform: translateX(-660px);
+                    }
+                    40% {
+                    -webkit-transform: translateX(-1320px);
+                    transform: translateX(-1320px);
+                    }
+                    60% {
+                    -webkit-transform: translateX(-1980px);
+                    transform: translateX(-1980px);
+                    }
+                    80% {
+                    -webkit-transform: translateX(-2600px);
+                    transform: translateX(-2640px);
+                    }
+                    100% {
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0);
+                    }
+            }
+            

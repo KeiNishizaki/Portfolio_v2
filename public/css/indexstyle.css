@@ -64,8 +64,20 @@ ul {
   top: 0;
   z-index: 999;
   width: 100%;
-  display: none;
+
+  /* スライド用アニメーション */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
 }
+
+/* 表示時に追加するクラス */
+#about.show {
+  max-height: 1000px;  /* 必要に応じて調整 */
+  opacity: 1;
+}
+
 #aboutInner {
   width: 865px;
   margin: 0 auto;
@@ -84,6 +96,10 @@ ul {
 }
 #aboutInner .last {
   margin-bottom: 50px;
+}
+#about.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ====================

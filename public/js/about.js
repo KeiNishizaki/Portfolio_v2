@@ -1,32 +1,30 @@
-//var txt1 = "Close";
-//var txt2 = "About";
+function clickBtn1() {
+  const about = document.getElementById("about");
+  const btnClose = document.getElementById("btnClose");
 
-//function ChangeTxt(txt){
-//	document.getElementById("btnAbout").innerHTML=txt;
-	// id名(btnabout)の文字を引数(txt))に変える
-//}
+  const isShowing = about.classList.contains("show");
 
-function clickBtn1(txt){
-	var elements = document.getElementById("about");
-	var elements2 = document.getElementById("btnClose");
-
-	if(elements.style.display=="block"){
-		// noneで非表示
-		elements.style.display ="none";
-		elements2.style.display ="none";
-
-		//closeをaboutに
-		//ChangeTxt(txt2)
-		//css変更して"about"を上に持ってくる
-		//btnAbout.style.top = "28px";
-
-	}else{
-		// blockで表示
-		elements.style.display ="block";
-		elements2.style.display ="block";
-		//aboutをcloseに
-		//ChangeTxt(txt1);
-		//css変更して"close"を下に持ってくる
-		//btnAbout.style.top = "350px";
-	}
+  if (isShowing) {
+    // 非表示にする
+    about.classList.remove("show");
+    // ボタンも非表示
+    if (btnClose) btnClose.style.display = "none";
+  } else {
+    // 表示前にdisplayをblockに
+    about.style.display = "block";
+    // 遅延してアニメーション開始
+    requestAnimationFrame(() => {
+      about.classList.add("show");
+    });
+    // 閉じるボタン表示
+    if (btnClose) btnClose.style.display = "block";
+  }
+  
+  // アニメーション終了後に display:none にする
+  about.addEventListener('transitionend', function handler() {
+    if (!about.classList.contains('show')) {
+      about.style.display = "none";
+    }
+    about.removeEventListener('transitionend', handler);
+  });
 }

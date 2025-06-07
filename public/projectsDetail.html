@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+
+    <head>
+
+        <title>NISHIZAKI　KEI</title>
+        
+        <meta charset="UTF-8">
+        <link href="css/projectsDetail.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+        <!-- Font Awesome 5 -->
+        <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+
+        
+
+        <script type="text/javascript" src="js\about.js"></script>
+        <!-- <script type="text/javascript" src="js\workskip.js"></script>
+        <script type="text/javascript" src="js\min.js"></script> -->
+        <script type="text/javascript" src="js\roop.js" defer></script>
+
+        <!--modai機能のjs引用-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+        <!--アニメーション-->
+       <!-- Lightbox -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script> -->
+
+        <!-- アニメーション用 JavaScript（外部ファイル）-->
+        <script src="js/startWindow.js"></script> <!-- パスは環境に合わせて修正 -->
+        <!-- sectionのスライドアニメーション -->
+        <script src="js/sectionAnimation.js"></script>
+        <!--ChatBot-->
+        <script src="./js/chatbot.js"></script>
+    
+
+    </head>
+        <header>
+        <!-- <div id="cursor" class="cursor" style="opacity: 1; top: 450px; left: 2848px;"></div> -->
+        <div id="about"><!--最初は非表示-->
+
+
+                    
+                <div id="aboutInner" class="cf">
+                    <dl>
+                        <dt class="font">PROFILE :      </dt>
+                    
+                        <dd>西崎慧　　Nishizaki　Kei<br>
+                            和歌山県和歌山市　出身<br>
+                            和歌山大学システム工学部メディアデザインメジャー　卒業<br>
+                        </dd>
+                        
+                        <dt class="font">CONTACT :      </dt>
+                        <dd><a href="mailto:nszkki.19981116@gmail.com" target="_blank">nszkki.19981116@gmail.com</a></dd>
+                        
+                        <dt class="font">ADDRESS :      </dt>
+                        <dd class="last">大阪府大阪市<br>
+                        Osakashi, Osakafu Japan</dd>
+
+                    </dl>
+
+                    <div class="right"><img src="img\myimage.jpg" alt="" width="140"></div>
+
+                </div>
+
+
+
+        </div>
+    </header>
+
+    <body>
+
+
+            
+
+        <div id ="wrapper">
+            <div id = "header">
+    
+                <h1 id="logo" style="top: 125px;"><a href="index.html"><img src="img\nishizaki-logo.png" alt="Nishizaki s226186@wakayaam-u.ac.jp"></a></h1>
+                <div id="btnAbout" class="font">
+                <a href="javascript:clickBtn1()">About</a><!--about.jsから関数を呼ぶ-->
+                </div><!--aboutボタンを押すとプロフィール表示する-->
+
+                <div id="btnClose" class="font">
+                <a href="javascript:clickBtn1()">Close</a><!--about.jsから関数を呼ぶ-->
+                </div><!--closeボタンを押すとプロフィール非表示する-->
+
+
+            </div><!-- /#header -->
+
+            <!--作品を書く-->
+        <div id="container">
+
+
+                <div id="articleContainer">
+
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">ホーム</a></li>
+                            <li><a href="projectsList.html">プロジェクト一覧</a></li>
+                            <li><a href="projectsDetail.html">棚卸システム</a></li>
+                        </ol>
+                    </nav>
+
+                    
+                    
+                    <div class="projectDetail">
+                        <!-- プロジェクト概要 -->
+                        <div class="project-head">
+                            <h3 class="project-date">2021/09　～　2022/06</h3>
+                            <h2 class="section-title">01. 棚卸システム</h2> <div class="project-head-content">
+                                <div class="project-bg">
+                                    <img src="img/projects/inventory_img.png" alt="棚卸システムのイメージ画像">
+                                </div>
+                                
+                                <div class="project-text-container">
+                                    <div class="project-concept">
+                                        <h2>
+                                            顧客体験を重視した設計へ
+                                        </h2>
+                                    </div>
+                                    <div class="project-desc">
+                                        <p class="txt">
+                                            大手素材メーカーにおいて、棚卸業務の効率化と在庫精度の向上を目的に、棚卸システムを設計・実装した。<br>
+                                            販売・物流管理システムに棚卸機能を追加することで、リアルタイム在庫更新・業務自動化を実現した。<br>
+                                            プロジェクトでは、要件定義から設計・実装・運用引継ぎまでを担当した。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div><!-- プロジェクト概要 -->
+
+                        <div class="project-point focus">
+                            <h2 class="section-title">Focus</h2> 
+                            
+                            <div class="focus-grid-container">
+                                
+                                <div class="focus-item">
+                                    <div class="focus-icon">
+                                        <img src="img/projects/assigned_role.svg" alt="担当した役割">
+                                    </div>
+                                    <div class="focus-content">
+                                        <h3 class="focus-heading">プロジェクトのポジション</h3>
+                                        <p class="focus-description">
+                                            従来のマーケティングに限定された顧客像ではなく「人」を起点としたデザインリサーチと分析を行います。定性データと定量データを顧客のコンテキストに沿いながら融合して、本質的なニーズや課題を紐解いていきます。
+                                        </p>
+                                    </div>
+                                    </div>
+
+                                <div class="focus-item">
+                                    <div class="focus-icon">
+                                        <img src="img/projects/used_skills.svg" alt="体験アイコン">
+                                    </div>
+                                    <div class="focus-content">
+                                        <h3 class="focus-heading">使用した技術/ツールについて</h3>
+                                        <p class="focus-description">
+                                            事業の成功確度を高めるためには顧客体験と事業戦略を一貫性のある形で接続する必要があります。事業責任者の想いに寄り添いながら戦略を指導し、業界の原理原則・社会トレンド・企業文化などの情報と統合して顧客体験をデザインします。
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="focus-item">
+                                    <div class="focus-icon">
+                                        <img src="img/projects/point_project.svg" alt="課題">
+                                    </div>
+                                    <div class="focus-content">
+                                        <h3 class="focus-heading">本プロジェクトの課題点</h3>
+                                        <p class="focus-description">
+                                            事業を円滑に進めていくためには様々なステークホルダーの支援や協力が重要です。部署横断的に各担当者の期待と懸念をマネジメントし、全社からの信頼と共感度を獲得しながらプロジェクトを前進させます。
+                                        </p>
+                                    </div>
+                                    </div>
+
+                                <div class="focus-item">
+                                    <div class="focus-icon">
+                                        <img src="img/projects/point_project.svg" alt="課題">
+                                    </div>
+                                    <div class="focus-content">
+                                        <h3 class="focus-heading">本プロジェクトの目的</h3>
+                                        <p class="focus-description">
+                                            多種多様な産業・分野でのデザイン支援実績を基にしたデザインノウハウ資産数は約3万件に及びます。クライアントのパートナーとしてプロジェクトで伴走しながら、顧客起点の思考や手法をデザイン文化としてクライアント組織に残します。
+                                        </p>
+                                    </div>
+                                    </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- プロジェクトのイメージ -->
+                        <div class="project-image">
+                            <h2 class="section-title">Images</h2> 
+                            <div id="image1">
+                                <img src="img/projects/inventory_img.png" alt="">
+                            </div>
+                            <div id="image2">
+                                <img src="img/projects/inventory_img.png" alt="">
+                            </div>
+
+
+                        </div><!-- プロジェクトのイメージ -->
+                        
+                        <!-- プロジェクトの感想 -->
+                        <div class="project-impression">
+                            <h2 class="section-title">Impression</h2> 
+                            <div class="focus-item">
+                                    <div class="focus-icon">
+                                        <img src="img/projects/used_skills.svg" alt="体験アイコン">
+                                    </div>
+                                    <div class="focus-content">
+                                        <h3 class="focus-heading">初めてのプロジェクト経験</h3>
+                                        <p class="focus-description">
+                                            事業の成功確度を高めるためには顧客体験と事業戦略を一貫性のある形で接続する必要があります。事業責任者の想いに寄り添いながら戦略を指導し、業界の原理原則・社会トレンド・企業文化などの情報と統合して顧客体験をデザインします。
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                        </div><!-- プロジェクトの感想 -->
+                        
+                    </div>
+                        
+                    </div>
+
+
+                    
+
+                         
+                </div><!--articleContainer-->
+        </div>
+
+            <ul id="gnav" class="font">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projectsList.html">Projects</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="humanity.html">Humanity</a></li>
+                <li><a href="others.html">Others</a></li>  
+            </ul>
+
+          
+            
+        </div><!--/#container-->
+                                            
+
+        </div><!--/#wrapper-->
+        <div class="chat-Container">
+          <!-- ランチャーボタン -->
+          <button class="chat-launcher" id="chat-launcher" type="button"></button>
+
+          <!-- チャットウィンドウ -->
+          <div class="chat-box" id="chat-box" style="display: none;">
+            <div class="chat-header">
+              AI ChatBot
+              <button class="close-button" id="close-button">×</button>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+              <input type="text" id="user-input" placeholder="質問してください..." />
+              <button id="send-button" type="button">送信</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+        <div class="col">
+            <a href="#top" class="scroll-up-box mr-120" id="page-top">
+                TOP
+            </a>
+        </div>
+        
+
+
+        </body>
+        
+
+        <footer>
+          <p>&copy; 2025 Kei Nishizaki. All rights reserved.</p>
+        </footer>
+
+
+</html>

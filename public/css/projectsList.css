@@ -31,10 +31,12 @@
 
 .projectList .box:nth-child(odd) .desc {
   padding-left: 50px;
+  padding-right: 50px;
 }
 
 .projectList .box:nth-child(even) .desc {
-  padding-right: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 .project-bg img{
     margin: 10px;
@@ -43,7 +45,7 @@
 }
 
 
-.project-date h3{
+/* .project-date h3{
     position: relative;
     border-top: solid 2px #80c8d1;
     border-bottom: solid 2px #80c8d1;
@@ -52,19 +54,19 @@
     padding: 0.4em 0.5em;
     margin: 2em 0 0.5em;
 
-}
+} */
 .project-date h3{
     position: absolute;
     font-family: "Font Awesome 5 Free",'Quicksand','Avenir','Arial',sans-serif;
     font-weight: 900;
     content: '\f0a7\ POINT';
-    background: #80c8d1;
+    background: #ffffff;
     color: #fff;
     left: 0px;
     bottom: 100%;
     border-radius: 5px 5px 0 0;
     padding: 5px 7px 3px;
-    /* font-size: 0.7em; */
+    font-size: 0.7em;
     line-height: 1;
     letter-spacing: 0.05em;
 
@@ -76,7 +78,9 @@
     /* background: #f4f4f4; */
     line-height: 1.4;
     padding: 0.4em 0.5em;
-    margin: 2em 0 0.5em;
+    /* margin: 2em 0 0.5em; */
+    font-size: 15px;
+
     font-family: 'PT Sans', 'Noto Sans JP', sans-serif;
 }
 
@@ -85,7 +89,7 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     position: absolute;
-    background: #9fa9b7af;
+    background: #9fa9b7;
     color: #fff;
     left: 0px;
     bottom: 100%;
@@ -95,6 +99,7 @@
     line-height: 1;
     letter-spacing: 0.05em;
 }
+
 
 
 /* ====================
@@ -366,9 +371,9 @@ ul {
   left: 0;
   top: 0;
   height: 0%;
-  width: 2.0px;
-  background: linear-gradient(to bottom, #545454, #ececec); /* スタイリッシュなグラデーション */
-  transition: height 3.0s ease-out;
+  width: 5.0px;
+  background: linear-gradient(to bottom, #bfbfbf, #ececec); /* スタイリッシュなグラデーション */
+  transition: height 1.0s ease-out;
   border-radius: 2px;
 }
 
@@ -392,9 +397,9 @@ ul {
   left: 100%;
   top: 0;
   height: 0%;
-  width: 2.0px;
-  background: linear-gradient(to bottom, #545454, #ececec); /* スタイリッシュなグラデーション */
-  transition: height 3.0s ease-out;
+  width: 5.0px;
+  background: linear-gradient(to bottom, #bfbfbf, #ececec); /* スタイリッシュなグラデーション */
+  transition: height 1.0s ease-out;
   border-radius: 2px;
 }
 

@@ -20,24 +20,29 @@ body {
     height: 100%;
 }
 
+html, body {
+  height: 100%;
+}
 body {
-    font-family: 'PT Sans', 'Noto Sans JP', sans-serif;
-    color: #3E4550;
-    margin: 0;
-    padding: 0;
-    font-size: 16px; /* 基本フォントサイズ設定 */
+  font-family: 'PT Sans', 'Noto Sans JP', sans-serif;
+  color: #3E4550;
 }
-
 a {
-    color: #696969;
-    text-decoration: none;
+  color: #696969;
+  text-decoration: none;
 }
-
-ul,
-ol {
-    padding: 0;
-    list-style: none;
-    margin: 0;
+#gnav a:hover {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+ul {
+  margin-block: 1em;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
 }
 
 /* ====================
@@ -49,7 +54,7 @@ ol {
     font-size: .8em; /* スマホ向けに小さく */
     padding: 10px 15px; /* スマホ向けにパディング調整 */
     width: 100%; /* 幅を100%に */
-    margin: 0 auto;
+    /* margin: 0 auto; */
     overflow-x: auto; /* はみ出した場合にスクロール */
     white-space: nowrap; /* 折り返しを防ぐ */
 }
@@ -704,85 +709,48 @@ ol {
 }
 
 /* ====================
-    Navigation (Mobile First)
+    Navigation
 ==================== */
 #gnav {
-    position: static; /* スマホでは静的 */
-    width: 100%;
-    display: flex;
-    justify-content: center; /* 中央寄せ */
-    flex-wrap: wrap;
-    gap: 0.5rem; /* アイテム間の隙間 */
-    background-color: #f8f8f8; /* 背景色を追加 */
-    padding: 0.5rem 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    margin-top: 2rem; /* コンテンツとの間隔 */
-    margin-bottom: 2rem;
+  position: fixed;
+  bottom: 31px;
+  left: 26px;
 }
-
 #gnav li {
-    width: auto; /* 幅を自動調整 */
-    padding: 0 0.5rem;
+  width: 150px;
 }
-
 #gnav a {
-    display: block;
-    padding: 0.4rem 0.6rem; /* スマホ向けに調整 */
-    font-size: 0.9rem; /* スマホ向けに小さく */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    white-space: nowrap;
+  display: block;
+  padding: 9px 0;
 }
-
-#gnav a:hover {
-    font-size: 0.9rem; /* スマホでは拡大しない */
-    font-weight: normal; /* スマホでは太字にしない */
-    color: #007bff;
-    background-color: #f0f0f0;
-}
-
 #lnav {
-    position: static; /* スマホでは静的 */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: #f8f8f8;
-    padding: 0.5rem 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+  position: fixed;
+  bottom: 40px;
+  right: 60px;
 }
-
 #lnav li {
-    height: auto;
-    width: auto;
+  height: 15px;
 }
-
 #lnav #pagetop {
-    margin: 0; /* リセット */
-    font-size: 1rem; /* スマホ向けに調整 */
-    padding: 0.4rem 0.6rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+  margin-bottom: -23%;
+  margin-left: 50%;
+  font-size: 25px;
 }
-
 #lnav #btnPrev,
 #lnav #btnNext {
-    margin: 0; /* リセット */
-    padding: 0.4rem 0.6rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+  margin-left: 5%;
 }
-
+#lnav #btnPrev {
+  margin-bottom: 50px;
+}
+#lnav #btnNext {
+  margin-bottom: 30px;
+}
 #lnav #btnPrev a:hover,
 #lnav #btnNext a:hover {
-    background-position: center; /* 画像を使用している場合 */
-    background-color: #f0f0f0;
+  background-position: 50% 0;
 }
+
 
 /* ====================
     Animations
@@ -1126,7 +1094,7 @@ ol {
         flex-wrap: nowrap;
         gap: 0;
         background-color: transparent; /* 背景色を透明に */
-        padding: 0;
+        /* padding: 0; */
         border: none;
         margin-top: 0;
         margin-bottom: 0;
@@ -1177,6 +1145,11 @@ ol {
     }
     #lnav #btnPrev { margin-bottom: 50px; }
     #lnav #btnNext { margin-bottom: 30px; }
+}
+.font {
+  font-family: 'PT Sans', 'Noto Sans JP', sans-serif;
+  font-size: 100%;
+  letter-spacing: 0.1em;
 }
 
 /* Large devices (desktops, 992px and up) */

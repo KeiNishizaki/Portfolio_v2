@@ -125,7 +125,7 @@ ul {
   left: 0;
   width: 100%;    /* 親要素の幅いっぱい */
   height: 100%;     /* 親要素の高さいっぱい */
-  background-color: rgba(255, 255, 255, 0.3); /* 半透明の白 */
+  background-color: rgba(255, 255, 255, 0.15); /* 半透明の白 */
   z-index: 1;
   pointer-events: none; /* オーバーレイでクリック等を邪魔しない場合 */
 }
@@ -133,7 +133,7 @@ ul {
 /* 背景画像自体 */
 .mv_img img {
   width: 100%;
-  height: 100%;
+  height: 40vh;
   object-fit: cover;
   display: block;
 }
@@ -186,6 +186,7 @@ ul {
 #about.show {
   opacity: 1;
   visibility: visible;
+  /* max-height: 1000px;  必要に応じて調整 */
 }
 
 /* ====================
@@ -389,7 +390,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明のオーバーレイ */
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明のオーバーレイ */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -421,8 +422,8 @@ ul {
 .projectList .box .desc::before {
     content: '';
     position: absolute;
-    top: 0px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     width: 40px;
     height: 40px;
     border-top: 3px solid #9b9b9b; /* 青系のアクセント */
@@ -432,8 +433,8 @@ ul {
 .projectList .box .desc::after {
     content: '';
     position: absolute;
-    bottom: 0px;
-    right: 20px;
+    bottom: 10px;
+    right: 10px;
     width: 40px;
     height: 40px;
     border-bottom: 3px solid #9b9b9b; /* 青系のアクセント */
@@ -449,7 +450,7 @@ ul {
 
 
 .projectList .box .desc .txt {
-  font-size: 16px; /* 文字サイズを大きく */
+  font-size: 17px; /* 文字サイズを大きく */
   line-height: 1.8; /* 行の高さを調整して読みやすく */
   margin-top: 15px; /* 上の要素からの余白 */
   margin-bottom: 25px; /* 下の要素への余白 */
@@ -459,7 +460,7 @@ ul {
 /* プロジェクトの日付 (画像上に表示) */
 .projectList .box .project-overlay-content .project-date {
   position: static; /* 絶対配置を解除して通常フローに */
-  font-size: 16px; /* 少し大きく */
+  font-size: 17px; /* 少し大きく */
   margin-bottom: -10px; /* タイトルとの間隔 */
   color: white; /* テキスト色 */
   border: none; /* 枠線を削除 */
@@ -512,12 +513,13 @@ ul {
   border-radius: 0px;
 }
 
-.project_detail_button:hover,
-.project_detail_button:hover a {
+.project_detail_button:hover{
   background-color: #565656;
   color: #fff !important;
 }
-
+.project_detail_button:hover a {
+  color: #fff; /* もしくは color: #fff !important; */
+}
 
 /* ====================
     Article Container (Adjustments for general layout)
@@ -535,6 +537,7 @@ ul {
 #section2::before,
 #section4::before,
 #section3::before,
+#section6::before,
 #section5::before {
   display: none;
 }

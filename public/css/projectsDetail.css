@@ -111,14 +111,14 @@ ul {
     line-height: 1.4;
     padding: 0.4em 0.5em;
     margin: 1.5em 0 0.5em; /* スマホ向けに調整 */
-    font-family: 'PT Sans', 'Noto Sans JP', sans-serif;
+    font-family: "Font Awesome 5 Free";
     width: fit-content;
     font-size: 0.9em; /* スマホ向けに小さく */
 }
 
 .project-date::before {
     content: '\f073  Term'; /* Font Awesome のコード＋テキスト */
-    font-family: 'PT Sans', 'Noto Sans JP', sans-serif; /* Font Awesome のフォントを指定 */
+    font-family: "Font Awesome 5 Free";/* Font Awesome のフォントを指定 */
     font-weight: 900;
     position: absolute;
     background: #9fa9b7;
@@ -141,7 +141,7 @@ ul {
     margin-bottom: 25px; /* スマホ向けに調整 */
     text-align: left;
     padding-left: 10px; /* スマホ向けに調整 */
-    border-left: 3px solid #007bff; /* 線を少し細く */
+    border-left: 3px solid #6d95bf; /* 線を少し細く */
     line-height: 1.3; /* 行の高さを調整 */
 }
 
@@ -378,118 +378,67 @@ ul {
     About Section (Modal/Overlay)
 ==================== */
 #about {
-    background: #e9e9e9;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    overflow-y: auto; /* contents scrollable */
-    -webkit-overflow-scrolling: touch;
+  background: #e9e9e9;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 #aboutInner {
-    width: 95%; /* スマホ向けに調整 */
-    max-width: 865px; /* 最大幅 */
-    margin: 0 auto;
-    padding: 20px 15px; /* スマホ向けに調整 */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    max-height: 90vh; /* 画面高さを超えないように */
-    display: flex; /* Flexboxで内容を配置 */
-    flex-direction: column; /* スマホでは縦並び */
-    align-items: center; /* 中央寄せ */
+  width: 865px;
+  margin: 0 auto;
+  padding: 40px 0 30px;
 }
-
 #aboutInner dl {
-    width: 100%; /* スマホでは幅いっぱいに */
-    margin-bottom: 15px; /* ddとの間隔 */
+  float: left;
+  width: 660px;
 }
-
 #aboutInner dt {
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-align: center; /* スマホでは中央寄せ */
+  width: 105px;
+  line-height: 100%;
 }
-
 #aboutInner dd {
-    margin-left: 0;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    text-align: center; /* スマホでは中央寄せ */
+  margin: -20px 0 30px 105px;
 }
-
-#aboutInner .right { /* 画像コンテナ */
-    flex-shrink: 0;
-    width: 120px; /* スマホ向けに小さく */
-    height: 120px;
-    overflow: hidden;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
+#aboutInner .last {
+  margin-bottom: 50px;
 }
-
-#aboutInner .right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
 #about.show {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
+  /* max-height: 1000px;  必要に応じて調整 */
 }
 
 /* ====================
-    Logo & Buttons (Fixed Position - Mobile First)
+    Logo & Buttons
 ==================== */
 #logo {
-    position: static; /* スマホでは静的 */
-    margin: 1rem auto 0.5rem; /* 中央寄せ */
-    text-align: center;
-    width: auto;
-    z-index: 900; /* ロゴとボタンの重なり順を調整 */
+  position: fixed;
+  top: 125px;
+  left: 5%;
+  z-index: 900;
 }
-#logo img {
-    height: auto;
-    width: 120px; /* スマホ向けに小さく */
+#btnAbout, #btnClose {
+  padding: 0 25px 0 3px;
+  position: fixed;
+  left: 52px;
+  cursor: pointer;
 }
-
-#btnAbout,
-#btnClose {
-    position: static; /* スマホでは静的 */
-    display: block;
-    margin: 0.5rem auto; /* 中央寄せ */
-    cursor: pointer;
-    font-size: 1rem; /* スマホ向けに小さく */
-    padding: 0.5em 1em; /* パディング調整 */
-    white-space: nowrap;
-    z-index: 1000;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
 #btnAbout {
-    /* topはstaticなので不要 */
+  top: 28px;
 }
-
 #btnClose {
-    display: none;
-    /* topはstaticなので不要 */
-    margin-bottom: 1.5rem;
+  top: 350px;
+  display: none;
+}
+#btnAbout.open, #btnClose.open {
+  padding-right: 25px;
 }
 
 /* #btnAbout.open, #btnClose.open はJavaScriptで制御 */
@@ -949,41 +898,7 @@ ul {
         flex-direction: row-reverse; /* 反転レイアウトに戻す */
     }
 
-    /* ====================
-        About Section
-    ==================== */
-    #aboutInner {
-        width: 865px;
-        padding: 30px 20px;
-        flex-direction: row; /* 横並びに戻す */
-        align-items: flex-start;
-    }
-    #aboutInner dl {
-        flex: 1 1 auto;
-        width: auto;
-        margin-right: 20px; /* 右側の画像との間隔 */
-        margin-bottom: 0;
-    }
-    #aboutInner dt {
-        float: left; /* floatを再適用 */
-        clear: left;
-        width: 105px;
-        text-align: left;
-        margin-bottom: 15px;
-    }
-    #aboutInner dd {
-        margin-left: 105px;
-        margin-bottom: 25px;
-        text-align: left;
-    }
-    #aboutInner .right {
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: 20px;
-        width: 140px;
-        height: 140px;
-    }
-
+    /* 
     /* ====================
         Logo & Buttons
     ==================== */
@@ -1151,6 +1066,12 @@ ul {
   font-size: 100%;
   letter-spacing: 0.1em;
 }
+.right {
+  float: right;
+  display: inline-block;
+  margin-top: 20px;
+}
+
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -1277,28 +1198,7 @@ ul {
         font-size: 1.1rem;
     }
 
-    /* ====================
-        About Section
-    ==================== */
-    #aboutInner {
-        padding: 40px 20px 30px;
-    }
-    #aboutInner dl {
-        margin-right: 20px;
-    }
-    #aboutInner dt {
-        text-align: left;
-        width: 105px;
-    }
-    #aboutInner dd {
-        margin-left: 105px;
-        text-align: left;
-    }
-    #aboutInner .right {
-        width: 140px;
-        height: 140px;
-    }
-
+   
     /* ====================
         ChatBot
     ==================== */

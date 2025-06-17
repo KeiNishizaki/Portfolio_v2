@@ -34,6 +34,10 @@ ul {
   unicode-bidi: isolate;
 }
 
+footer{
+    text-align: right;
+    margin: 100px;
+}
 /* ====================
     Layout
 ==================== */

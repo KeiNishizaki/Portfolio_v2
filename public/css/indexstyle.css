@@ -33,7 +33,10 @@ ul {
   padding-inline-start: 40px;
   unicode-bidi: isolate;
 }
-
+footer{
+    text-align: right;
+    margin: 100px;
+}
 /* ====================
    Layout
 ==================== */
@@ -306,7 +309,7 @@ ul {
 /* 画像サイズ調整 */
 .mv_img img {
   width: 100%;
-  max-width: 480px;
+  max-width: 700px;
   height: auto;
   border-radius: 2rem;
 }
@@ -553,27 +556,30 @@ p.tool {
 /* ====================
    Responsive
 ==================== */
-@media (max-width: 768px) {
-  #section1 {
+
+@media (min-width: 768px) {
+  /* #section1 {
     flex-direction: column;
     text-align: center;
     padding: 1.5rem;
   }
-  
-      /* ====================
-        Logo & Buttons
-    ==================== */
-    #logo {
-        position: fixed;
-        top: 125px;
-        left: 5%;
-        text-align: left;
-        margin: 0;
-    }
-    #logo img {
-        width: 200px;
-    }
-
+   */
+  /* ====================
+    Logo & Buttons
+  ==================== */
+  #logo {
+      position: fixed;
+      top: 125px;
+      left: 5%;
+      text-align: left;
+      margin: 0;
+  }
+  #logo img {
+      width: 200px;
+  }
+  .timeline{
+    margin: 0;
+  }
   .site_title {
     font-size: 2rem;
   }
@@ -582,7 +588,7 @@ p.tool {
     font-size: 1rem;
   }
 
-  .mv_img img {
+  /* .mv_img img {
     max-width: 90%;
   }
   .mv_wrapper {
@@ -601,12 +607,13 @@ p.tool {
    .caption {
     font-size: 0.9rem;
     padding: 0.5rem;
-  }
+  } */
 
   .nav {
     font-size: 1.5rem;
     padding: 0.3rem 0.6rem;
   }
+  
   
 }
 
@@ -791,6 +798,10 @@ p.tool {
     margin-left: 0;
     font-size: 14px;
     line-height: 1.6;
+  }
+  
+  #section4{
+    visibility:hidden;
   }
 }
 

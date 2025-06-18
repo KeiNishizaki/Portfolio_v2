@@ -294,6 +294,38 @@ footer{
         padding: 20px 0;
         max-width: 1200px;
     }
+    /* ====================
+    Logo & Buttons
+  ==================== */
+  #logo {
+      position: fixed;
+      top: 125px;
+      left: 5%;
+      text-align: left;
+      margin: 0;
+  }
+  #logo img {
+      width: 200px;
+  }
+    /* ====================
+        Navigation
+    ==================== */
+    #gnav {
+      position: fixed;
+      bottom: 31px;
+      left: 26px;
+    }
+    #gnav li {
+      width: 150px;
+    }
+    #gnav a {
+      display: block;
+      padding: 9px 0;
+    }
+    #gnav a:hover {
+        font-size: 1.5em; /* 拡大を適用 */
+        font-weight: bold;
+    }
 }
 .breadcrumb ul {
     list-style: none;

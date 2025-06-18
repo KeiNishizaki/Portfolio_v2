@@ -764,6 +764,19 @@ footer{
         padding-left: 150px; /* 左ナビゲーション部分のパディング */
         padding-right: 20px;
     }
+    /* ====================
+        Logo & Buttons
+    ==================== */
+    #logo {
+        position: fixed;
+        top: 125px;
+        left: 5%;
+        text-align: left;
+        margin: 0;
+    }
+    #logo img {
+        width: 200px;
+    }
 
     /* ====================
         Breadcrumb
@@ -1003,32 +1016,26 @@ footer{
         width: 15px;
     }
 
+    .breadcrumb {
+        gap: 0 20px;
+        font-size: .9em;
+        padding: 20px 0;
+        max-width: 1200px;
+    }
     /* ====================
         Navigation
     ==================== */
     #gnav {
-        position: fixed;
-        bottom: 31px;
-        left: 26px;
-        display: block; /* Flex解除 */
-        justify-content: flex-start; /* 左寄せ */
-        flex-wrap: nowrap;
-        gap: 0;
-        background-color: transparent; /* 背景色を透明に */
-        /* padding: 0; */
-        border: none;
-        margin-top: 0;
-        margin-bottom: 0;
+      position: fixed;
+      bottom: 31px;
+      left: 26px;
     }
     #gnav li {
-        width: 150px;
-        padding: 0;
+      width: 150px;
     }
     #gnav a {
-        padding: 9px 0;
-        font-size: 1rem;
-        border: none;
-        background-color: transparent;
+      display: block;
+      padding: 9px 0;
     }
     #gnav a:hover {
         font-size: 1.5em; /* 拡大を適用 */

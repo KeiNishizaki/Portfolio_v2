@@ -588,27 +588,31 @@ p.tool {
     font-size: 1rem;
   }
 
-  /* .mv_img img {
-    max-width: 90%;
-  }
-  .mv_wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-  .site_title {
-    font-size: 2rem;
-  }
-  .subtitle {
-    font-size: 1.2rem;
-  }
-  .typed_wrap p {
-    font-size: 1rem;
-  }
-   .caption {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-  } */
-
+  .breadcrumb {
+        gap: 0 20px;
+        font-size: .9em;
+        padding: 20px 0;
+        max-width: 1200px;
+    }
+    /* ====================
+        Navigation
+    ==================== */
+    #gnav {
+      position: fixed;
+      bottom: 31px;
+      left: 26px;
+    }
+    #gnav li {
+      width: 150px;
+    }
+    #gnav a {
+      display: block;
+      padding: 9px 0;
+    }
+    #gnav a:hover {
+        font-size: 1.5em; /* 拡大を適用 */
+        font-weight: bold;
+    }
   .nav {
     font-size: 1.5rem;
     padding: 0.3rem 0.6rem;

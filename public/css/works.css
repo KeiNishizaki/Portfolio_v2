@@ -1,0 +1,875 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/* ====================
+    Base Reset & Global
+==================== */
+*, ::before, ::after {
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    font-family: 'PT Sans', 'Noto Sans JP', sans-serif;
+    color: #3E4550;
+}
+a {
+    color: #696969;
+    text-decoration: none;
+}
+/* ナビゲーションのホバー時のスタイルを確実に適用 */
+#gnav a:hover {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+ul, ol {
+    padding: 0;
+    list-style: none;
+}
+ul {
+    margin-block: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+footer{
+    text-align: right;
+    margin: 100px;
+}
+/* ====================
+    Layout
+==================== */
+#wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    max-width: 1200px; /* #articleContainer と同じ最大幅を設定 */
+}
+
+/* タイトルを前面に表示 */
+.mv_title-top {
+    position: relative;
+    z-index: 2; /* 背景画像とオーバーレイより前面 */
+    margin-left: 5%;
+    color: #ffffff;
+}
+
+.mv_title-top .site_title::after {
+    display: none;
+}
+.mv_title {
+    text-align: center;
+    margin: 80px 0 40px;
+    position: relative;
+}
+
+/* Projects のタイトル */
+.site_title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.site_title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60px;
+    height: 4px;
+    background-color: #848484;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+.site_title:hover::after {
+    width: 100px;
+}
+.subtitle {
+    font-size: 1.5rem;
+}
+.typed_wrap p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+.typed {
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    position: relative;
+}
+.typed::after {
+    content: '|';
+    animation: blink 2s step-end infinite;
+    margin-left: 5px;
+}
+
+
+@keyframes blink {
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
+}
+/* 画像エリア */
+.mv_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+/* 白のオーバーレイ（bindup流） */
+#section1::before {
+    content: "";
+    position: absolute; /* 絶対配置にして親要素の左上に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;    /* 親要素の幅いっぱい */
+    height: 100%;   /* 親要素の高さいっぱい */
+    background-color: rgba(255, 255, 255, 0.15); /* 半透明の白 */
+    z-index: 1;
+    pointer-events: none; /* オーバーレイでクリック等を邪魔しない場合 */
+}
+
+/* 背景画像自体 */
+.mv_img img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    display: block;
+}
+
+.font {
+    font-family: 'PT Sans', 'Noto Sans JP', sans-serif;
+    font-size: 100%;
+    letter-spacing: 0.1em;
+}
+.right {
+    float: right;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* ====================
+    About Section
+==================== */
+#about {
+    background: #e9e9e9;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#aboutInner {
+    width: 865px;
+    margin: 0 auto;
+    padding: 40px 0 30px;
+}
+#aboutInner dl {
+    float: left;
+    width: 660px;
+}
+#aboutInner dt {
+    width: 105px;
+    line-height: 100%;
+}
+#aboutInner dd {
+    margin: -20px 0 30px 105px;
+}
+#aboutInner .last {
+    margin-bottom: 50px;
+}
+#about.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ====================
+    Logo & Buttons
+==================== */
+#logo {
+    position: fixed;
+    top: 125px;
+    left: 5%;
+    z-index: 900;
+}
+#logo img { /* ロゴ画像の幅を指定 */
+    width: 200px; /* 必要に応じて調整 */
+    height: auto;
+}
+#btnAbout, #btnClose {
+    padding: 0 25px 0 3px;
+    position: fixed;
+    left: 52px;
+    cursor: pointer;
+}
+#btnAbout {
+    top: 28px;
+}
+#btnClose {
+    top: 350px;
+    display: none;
+}
+#btnAbout.open, #btnClose.open {
+    padding-right: 25px;
+}
+
+/* ====================================================================
+    articleContainer の中身に適用されるCSS
+    ロゴ、About、チャットボット、section1 以外の部分を調整します。
+==================================================================== */
+
+#articleContainer {
+    width: 100%; /* wrapperに合わせるため100%に */
+    margin: 0 auto;
+    padding: 0; /* wrapperで左右の余白を制御するため0に */
+    max-width: 1200px; /* 他ページと共通の最大幅 */
+}
+
+/* section1 の調整 */
+#section1 {
+    display: flex;
+    position: relative;
+    height: 300px; /* 他ページのCSSから設定を引用 */
+    margin-bottom: 100px;
+    overflow: hidden;
+    /* section1 は wrapper の子要素なので、wrapperの幅を継承します */
+    /* width: 100%; は #articleContainer に設定されているため不要 */
+}
+
+/* 各作品セクションの共通スタイル */
+.section {
+    margin-bottom: 80px; /* 各セクション間の下マージン */
+    padding: 40px 20px; /* 左右のパディングを追加し、wrapper の左右の余白と合わせる */
+    box-sizing: border-box; /* padding を幅に含まれるように設定 */
+    position: relative;
+    overflow: hidden; /* 子要素のはみ出しを隠す */
+    /* section2以降の横幅をsection1と同じ幅にするため、#articleContainer の幅を継承 */
+    width: 100%; 
+    max-width: 1200px; /* 明示的に最大幅を設定 */
+    margin-left: auto; /* 中央寄せ */
+    margin-right: auto; /* 中央寄せ */
+}
+
+/* ====================
+    作品カードレイアウト (work-door-wrapper を含むセクション)
+    section2以降は全てこの形式で表示するよう変更
+==================== */
+/* .hgroup.row は、作品の画像と説明文のペアを持つコンテナ */
+.hgroup.row {
+    display: block; /* work-door-wrapper をブロック要素として扱う */
+}
+
+/* 扉アニメーションのワークカードのスタイル */
+.work-door-wrapper {
+    position: relative;
+    width: 100%; /* 親要素 (.section) の幅に合わせる */
+    /* max-width: 1000px; ← ここを削除しました */
+    height: auto; /* 高さをコンテンツに合わせて自動調整 */
+    aspect-ratio: 660 / 466; /* アスペクト比を設定 (例: 16:9)。必要に応じて調整 */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 影を強調 */
+    cursor: pointer;
+    transition: transform 0.3s ease-out; /* ホバーで少し持ち上がる */
+    margin: 0 auto; /* .section 内で中央寄せにする */
+}
+
+.work-door-wrapper:hover {
+    transform: translateY(-8px); /* ホバーで少し上に持ち上がる */
+}
+
+/* デフォルトは画像のみの表示 */
+.work-door-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* 扉より上 (デフォルトで画像が表示されるように) */
+    transition: opacity 0.5s ease; /* ホバーでフェードアウト */
+}
+
+.work-door-wrapper:hover .work-door-front {
+    opacity: 0; /* ホバーで画像を非表示にする */
+}
+
+.work-door-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+/* 扉のスタイル */
+.door {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 扉の色を少し濃く */
+    z-index: 2; /* 扉が画像の上に来るように */
+    transition: transform 0.6s ease; /* 扉のアニメーション */
+    /* デフォルトで扉は開いている状態 (見えない状態) にする */
+    /* ホバーで扉が閉じ、その裏からwork-door-backが見えるように変更 */
+}
+
+.left-door {
+    left: 0;
+    transform-origin: left center;
+    transform: translateX(-100%); /* 初期状態は開いている (左に移動済み) */
+}
+
+.right-door {
+    right: 0;
+    transform-origin: right center;
+    transform: translateX(100%); /* 初期状態は開いている (右に移動済み) */
+}
+
+/* 扉が閉まった後に表示されるコンテンツ */
+.work-door-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 扉の背景色と合わせるか、少し透明度を高くしても良い */
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    z-index: 1; /* 画像の下、扉の下に配置 */
+    opacity: 0; /* 最初は非表示 */
+    transition: opacity 0.4s ease;
+    border-radius: 8px;
+}
+
+.work-door-back h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    width: 100%;
+    margin-top: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.work-door-back p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 1em;
+    width: 90%;
+    text-align: left;
+    color: #f0f0f0;
+}
+
+/* ホバー時のアニメーション: 扉が閉じ、work-door-back が表示される */
+.work-door-wrapper:hover .work-door-front {
+    opacity: 0; /* ホバーで画像を非表示にする */
+    z-index: 1; /* 扉が閉じたら画像は裏に隠れるように */
+}
+
+.work-door-wrapper:hover .left-door {
+    transform: translateX(0); /* 左の扉が閉じる */
+}
+
+.work-door-wrapper:hover .right-door {
+    transform: translateX(0); /* 右の扉が閉じる */
+}
+
+.work-door-wrapper:hover .work-door-back {
+    opacity: 1; /* コンテンツを表示 */
+    transition-delay: 0.6s; /* 扉が閉じるアニメーション後に表示 */
+    z-index: 4; /* ホバー時に最前面に */
+}
+
+/* ====================
+    通常の作品紹介レイアウト (画像と説明文が左右に並ぶセクション) は廃止
+    代わりに、全ての .section が .work-door-wrapper を内包する形式を想定
+==================== */
+.work-desc { /* 扉アニメーションの裏側に使われるので、ここで定義 */
+    /* ここに work-door-back の内容を記述 */
+}
+.image {
+    /* 扉アニメーションの work-door-front に内包されるので、ここでの直接的なスタイルは不要 */
+}
+
+/* section3 (左右反転) の調整は不要になる（全て扉アニメーション形式になるため） */
+
+/* ====================
+    レスポンシブデザイン (モバイルファーストを意識)
+==================== */
+@media (max-width: 768px) {
+    #articleContainer {
+        width: 95%; /* スマホでの幅を広げる */
+        padding: 0 10px;
+    }
+
+    .section {
+        margin-bottom: 50px; /* スマホでのセクション間隔を調整 */
+        padding: 20px 0;
+    }
+
+    .hgroup.row {
+        flex-direction: column; /* スマホでは縦並び */
+        gap: 30px; /* 要素間の間隔 */
+    }
+
+    .work-door-wrapper {
+        width: 100%; /* スマホでは幅いっぱいに */
+        height: 300px; /* スマホでの高さ調整 */
+    }
+
+    .work-door-back h2 {
+        font-size: 1.8rem; /* スマホでのタイトルサイズ調整 */
+    }
+
+    .work-door-back p {
+        font-size: 0.9rem; /* スマホでの段落文字サイズ調整 */
+    }
+
+    /* .work-desc, .image はこのコンテキストでは使われなくなる */
+    /* flex: 1 1 100%;
+    max-width: 100%;
+    padding: 20px; */
+}
+
+/* ====================
+    Section Styling (Disabling vertical lines on project sections)
+    これらは新しいデザインと競合するため、引き続き非表示にします。
+==================== */
+#section2::before,
+#section4::before,
+#section3::before,
+#section6::before,
+#section5::before,
+#section7::before,
+#section8::before { /* 新しいセクションにも適用 */
+    display: none;
+}
+
+
+/* ====================
+    ChatoBot
+==================== */
+.chat-box {
+    display: none; /* 初期状態は非表示 */
+    position: fixed;
+    bottom: 80px;
+    right: 100px;
+    width: 500px;
+    height: 60%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.chat-header {
+    background-color: #252525;
+    color: white;
+    padding: 14px 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.chat-input {
+    padding: 12px 16px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 8px;
+    background-color: #fff;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.chat-input button {
+    padding: 10px 16px;
+    background-color: #252525;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.chat-input button:hover {
+    background-color: #444;
+}
+
+.chat-launcher {
+    background-color: #252525;
+    background-image: url(../img/chatIcon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #ebeade;
+    border-radius: 50%;
+    bottom: 180px;
+    color: transparent;
+    font-size: 12px;
+    height: 48px;
+    width: 48px;
+    position: fixed;
+    right: 90px;
+    cursor: pointer;
+    z-index: 9999;
+}
+.message {
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.message.user {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.message.bot {
+    background-color: #eee;
+    align-self: flex-start;
+}
+/* ====================
+    Back to Top Button
+==================== */
+#page-top {
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    transform: rotate(90deg);
+    font-size: 100%;
+    font-weight: bold;
+    line-height: 2.5rem;
+    color: #737373;
+    padding-left: 35px;
+    border-top: solid 1px;
+}
+#page-top::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 15px;
+    border-top: solid 1px;
+    transform: rotate(35deg);
+    transform-origin: left top;
+}
+
+/* ====================
+    Responsive (元のCSSを基本とし、扉デザインの調整部分を追加)
+==================== */
+@media (max-width: 768px) {
+    .mv_wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .site_title {
+        font-size: 2rem;
+    }
+    .typed_wrap p {
+        font-size: 1rem;
+    }
+    .mv_img img {
+        max-width: 90%;
+    }
+    .mv_wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .caption {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+    .nav {
+        font-size: 1.5rem;
+        padding: 0.3rem 0.7rem;
+    }
+}
+
+
+/* ====================
+    Article Container (detail page specific, potentially merge or separate)
+==================== */
+#articleContainer .hgroup,
+#articleContainer .tgroup {
+    line-height: 100%;
+}
+#articleContainer .hgroup {
+    /* text-align: right; */
+}
+#articleContainer .tgroup {
+    text-align: left;
+}
+#articleContainer .hgroup h2,
+#articleContainer .tgroup h2 {
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+#articleContainer .cate,
+#articleContainer .date {
+    color: #999;
+    font-family: 'PT Sans', 'Noto Sans JP', sans-serif;
+    font-size: 108%;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+}
+#articleContainer .section .article .works {
+    margin-bottom: 55px;
+}
+#articleContainer .section .article .works img {
+    max-width: 800px;
+}
+#articleContainer .section .article .entry_txt {
+    margin: -45px 0 55px;
+    font-size: 83%;
+}
+
+/* 共通：横並びレイアウト (work-door-wrapper 用に再定義) */
+
+/* 左右の要素に幅を設定 (work-door-wrapper 用に再定義) */
+
+/* 画像サイズ調整 (work-door-wrapper 用に再定義) */
+
+/* section3だけ反転レイアウトは廃止 (全て扉アニメーション形式になるため) */
+
+/* スマホ対応 */
+@media screen and (max-width: 768px) {
+    .projectList .box { /* 他ページCSSからの引用だが、今回のHTMLには該当しない想定 */
+        flex-direction: column !important; /* スマホでは縦並び */
+    }
+
+    .projectList .box .project-image-link, /* 他ページCSSからの引用だが、今回のHTMLには該当しない想定 */
+    .projectList .box .desc {
+        flex: 1 1 100%; /* スマホでは幅100% */
+        max-width: 100%;
+    }
+
+    .projectList .box .project-image-wrapper { /* 他ページCSSからの引用だが、今回のHTMLには該当しない想定 */
+        padding-bottom: 75%; /* スマホではアスペクト比を調整 */
+    }
+
+    .projectList .box .desc { /* 他ページCSSからの引用だが、今回のHTMLには該当しない想定 */
+        padding: 20px 30px; /* スマホでのパディング */
+    }
+
+    .projectList .box .desc::before, /* 他ページCSSからの引用だが、今回のHTMLには該当しない想定 */
+    .projectList .box .desc::after {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+/* ====================
+    Pagenation
+==================== */
+.pagenate {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+}
+.pagenate .current,
+.pagenate .page {
+    display: none;
+}
+.pagenate .pages {
+    display: inline-block;
+    padding: 8px 0;
+}
+.pagenate .previouspostslink,
+.pagenate .nextpostslink {
+    position: absolute;
+    top: 0;
+    padding: 8px;
+}
+.pagenate .previouspostslink {
+    left: 40%;
+}
+.pagenate .nextpostslink {
+    right: 40%;
+}
+
+/* ====================
+    Navigation
+==================== */
+#gnav {
+    position: fixed;
+    bottom: 31px;
+    left: 26px;
+}
+#gnav li {
+    width: 150px;
+}
+#gnav a {
+    display: block;
+    padding: 9px 0;
+}
+#lnav {
+    position: fixed;
+    bottom: 40px;
+    right: 60px;
+}
+#lnav li {
+    height: 15px;
+}
+#lnav #pagetop {
+    margin-bottom: -23%;
+    margin-left: 50%;
+    font-size: 25px;
+}
+#lnav #btnPrev,
+#lnav #btnNext {
+    margin-left: 5%;
+}
+#lnav #btnPrev {
+    margin-bottom: 50px;
+}
+#lnav #btnNext {
+    margin-bottom: 30px;
+}
+#lnav #btnPrev a:hover,
+#lnav #btnNext a:hover {
+    background-position: 50% 0;
+}
+
+/* ====================
+    Slideshow
+==================== */
+.cp_cssslider {
+    overflow: hidden;
+}
+.cp_slide_item {
+    float: left;
+    position: relative;
+}
+.cp_slidewrapper {
+    width: 500%;
+    position: relative;
+    left: 0;
+    animation: slider 30s infinite ease;
+}
+@keyframes slider {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-660px); }
+    40% { transform: translateX(-1320px); }
+    60% { transform: translateX(-1980px); }
+    80% { transform: translateX(-2640px); }
+    100% { transform: translateX(0); }
+}
+@media screen and (max-width: 768px) {
+    #section1 {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .site_title {
+        font-size: 2rem;
+    }
+
+    .typed_wrap p {
+        font-size: 1rem;
+    }
+
+    .mv_img img {
+        max-width: 90%;
+    }
+    .mv_wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .caption {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    .nav {
+        font-size: 1.5rem;
+        padding: 0.3rem 0.7rem;
+    }
+}
+
+/* ====================
+    Animation Utility
+==================== */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: 0.8s ease, transform 0.8s ease;
+}
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.fade-zoom-in {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 3s ease, transform 3s ease;
+}
+.fade-zoom-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* デスクトップサイズでのロゴとボタンの調整 */
+@media (min-width: 768px) {
+    #logo img {
+        width: 200px; /* デスクトップでもロゴ画像の幅を指定 */
+    }
+    #gnav li {
+        width: 150px;
+    }
+    #gnav a {
+        padding: 9px 0;
+    }
+    #gnav a:hover {
+        font-size: 1.5em; /* 拡大を適用 */
+        font-weight: bold;
+    }
+}

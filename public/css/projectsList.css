@@ -564,6 +564,7 @@ footer{
   width: 80%; /* Set a max width */
   margin: 0 auto; /* Center the container */
   padding: 0 20px; /* Add some horizontal padding */
+    max-width: 1200px; /* 他ページと共通の最大幅 */
 }
 
 /* ====================
@@ -810,6 +811,10 @@ footer{
     flex: 1 1 100%;
   }
 
+  #articleContainer {
+    width: 95%; /* スマホでの幅を広げる */
+    padding: 0 10px;
+  }
   .projectList .box {
     flex-direction: column !important; /* スマホでは縦並び */
   }

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html></html>
+
+<head>
+  <title>NISHIZAKI　KEI</title>
+  
+  <meta charset="UTF-8">
+  <link href="css\humanity.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="js\about.js"></script>
+  <script type="text/javascript" src="js\humanity.js" defer></script>
+
+  <script src="js/startWindow.js"></script> <script src="./js/chatbot.js"></script>
+</head>
+<body>
+  <header>
+    <div id="about"><div id="aboutInner" class="cf">
+        <dl>
+          <dt class="font">PROFILE :     </dt>
+          <dd>西崎慧　　Nishizaki　Kei<br>
+            和歌山県和歌山市　出身<br>
+            和歌山大学システム工学部メディアデザインメジャー　卒業<br>
+          </dd>
+          
+          <dt class="font">CONTACT :     </dt>
+          <dd><a href="mailto:nszkki.19981116@gmail.com" target="_blank">nszkki.19981116@gmail.com</a></dd>
+          
+          <dt class="font">ADDRESS :     </dt>
+          <dd class="last">大阪府大阪市<br>
+            Osakashi, Osakafu Japan</dd>
+        </dl>
+        <div class="right"><img src="img\myimage.jpg" alt="" width="140"></div>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div id ="wrapper">
+      <div id = "header">
+        <h1 id="logo"><a href="index.html"><img src="img\nishizaki-logo.png" alt="Nishizaki s226186@wakayaam-u.ac.jp"></a></h1>
+        <div id="btnAbout" class="font">
+          <a href="javascript:clickBtn1()">About</a></div><div id="btnClose" class="font">
+          <a href="javascript:clickBtn1()">Close</a></div></div><div id="container">
+        <div id="articleContainer">
+          <div class="section humanity-section" id="humanitySection">
+            <div class="mv_title">
+              <p class="site_title">Please Match</p>
+              <div class="typed_wrap">
+                <p>
+                  <span class="typed" data-text="気になれば右スワイプかハートボタンでLikeを下さい"></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-image-container">
+                <img src="img/my_visual (1).png" alt="プロフィール画像" class="profile-main-image">
+              </div>
+              
+              <div class="profile-tabs">
+                <button class="tab-button active" data-tab="profile">プロフィール</button>
+                <button class="tab-button" data-tab="about">私について</button>
+                <button class="tab-button" data-tab="gallery">ギャラリー</button>
+              </div>
+
+              <div class="tab-content-container">
+                <div id="profile" class="tab-content active">
+                  <h2>西崎 慧 / Nishizaki Kei</h2>
+                  <div class="profile-info">
+                    <p><strong>趣味：</strong><span>読書、カフェ巡り、スポーツ観戦、ラーメン</span></p>
+                    <p><strong>休日の過ごし方：</strong><span>外出・街歩き / 家でのんびり</span></p>
+                    <p><strong>性格：</strong><span>人懐っこい / 論理的 / 柔軟性あり</span></p>
+                    <p><strong>希望勤務地：：</strong><span>大阪・東京・フルリモート可</span></p>
+                    <p><strong>希望年収：：</strong><span>500万〜800万円</span></p>
+                    <p><strong>働き方：：</strong><span>裁量がある、学習支援あり、チーム志向</span></p>
+                  </div>
+                </div>
+
+                <div id="about" class="tab-content">
+                  <h3>私の強みとこれからの目標</h3>
+                  <p>私は論理的思考力と柔軟性を兼ね備えたフロントエンドエンジニアです。新しい技術への学習意欲が高く、常に最新のトレンドをキャッチアップし、プロジェクトに活かすことを得意としています。チームでの開発を重視し、円滑なコミュニケーションを通じて最高のプロダクトを創り上げることに貢献します。</p>
+                  <p>将来は、ユーザー体験を追求した魅力的なUI/UXデザインと、それを実現する堅牢なフロントエンド開発の両面でスペシャリストを目指したいと考えています。貴社でのカジュアル面談を通じて、私のスキルと情熱をお伝えできれば幸いです。</p>
+                </div>
+
+                <div id="gallery" class="tab-content gallery-grid">
+                  <img src="https://via.placeholder.com/100x100/FE3C72/FFFFFF?text=Image1" alt="ギャラリー画像1">
+                  <img src="https://via.placeholder.com/100x100/1aae9f/FFFFFF?text=Image2" alt="ギャラリー画像2">
+                  <img src="https://via.placeholder.com/100x100/FE3C72/FFFFFF?text=Image3" alt="ギャラリー画像3">
+                  <img src="https://via.placeholder.com/100x100/1aae9f/FFFFFF?text=Image4" alt="ギャラリー画像4">
+                </div>
+              </div>
+
+              <div class="action-buttons-container">
+                <button class="action-button return-button" id="returnButton">
+                  <img src="img/Icon/return_icon.png" alt="Return">
+                </button>
+                <button class="action-button like-button" id="goodButton">
+                  <img src="img/Icon/good_icon.png" alt="Good">
+                </button>
+              </div>
+
+              </div>
+          </div>
+          
+          <div class="modal-overlay" id="matchModal">
+            <div class="modal-content">
+              <h3>Matchありがとうございます！</h3>
+              <p>良ければカジュアル面談しませんか？</p>
+              <a href="mailto:nszkki.19981116@gmail.com?subject=カジュアル面談希望です" class="modal-email-button">
+                メールで連絡する
+              </a>
+              <button class="modal-close-button" id="closeModal">閉じる</button>
+            </div>
+          </div>
+
+          <div class="modal-overlay" id="returnMessageModal">
+            <div class="modal-content small-modal">
+              <h3>もう一度、ご検討ください。</h3>
+              <button class="modal-close-button" id="closeReturnModal">閉じる</button>
+            </div>
+          </div>
+
+        </div></div>
+
+      <ul id="gnav" class="font">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projectsList.html">Projects</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="humanity.html">Humanity</a></li>
+        <li><a href="others.html">Others</a></li> 
+      </ul>
+    </div></div><div class="chat-Container">
+    <button class="chat-launcher" id="chat-launcher" type="button"></button>
+
+    <div class="chat-box" id="chat-box" style="display: none;">
+      <div class="chat-header">
+        AI ChatBot
+        <button class="close-button" id="close-button">×</button>
+      </div>
+      <div class="chat-messages" id="chat-messages"></div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="質問してください..." />
+        <button id="send-button" type="button">送信</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <a href="#top" class="scroll-up-box mr-120" id="page-top">
+      TOP
+    </a>
+  </div>
+</body>
+<footer>
+  <p>&copy; 2025 Kei Nishizaki. All rights reserved.</p>
+</footer>
+</html>

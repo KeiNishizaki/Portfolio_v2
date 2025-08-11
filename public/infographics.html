@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+
+    <head>
+
+        <title>NISHIZAKI　KEI</title>
+        
+        <meta charset="UTF-8">
+        <link href="css/infographics.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+        
+
+        <script type="text/javascript" src="js\about.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script defer src="js/infographics.js"></script>
+        <!-- <script type="text/javascript" src="js\workskip.js"></script>
+        <script type="text/javascript" src="js\min.js"></script> -->
+        <!-- <script type="text/javascript" src="js\roop.js" defer></script> -->
+
+        <!-- modai機能のjs引用-->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script> -->
+        <!--アニメーション-->
+       <!-- Lightbox -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script> -->
+
+        <!-- アニメーション用 JavaScript（外部ファイル）-->
+        <!-- <script src="js/startWindow.js"></script> パスは環境に合わせて修正 -->
+
+        <!--ChatBot-->
+        <script src="js/chatbot.js"></script>
+    
+
+    </head>
+
+
+    <body>
+
+        <div id="about">
+            <div id="aboutInner" class="cf">
+                <dl>
+                    <dt class="font">PROFILE :</dt>
+                    <dd>西崎慧　　Nishizaki　Kei<br>
+                        和歌山県和歌山市　出身<br>
+                        和歌山大学システム工学部メディアデザインメジャー　卒業<br>
+                    </dd>
+                    <dt class="font">CONTACT :</dt>
+                    <dd><a href="mailto:nszkki.19981116@gmail.com" target="_blank">nszkki.19981116@gmail.com</a></dd>
+                    <dt class="font">ADDRESS :</dt>
+                    <dd class="last">大阪府大阪市<br>
+                        Osakashi, Osakafu Japan</dd>
+                </dl>
+                <div class="right"><img src="img/myimage.jpg" alt="" width="140"></div>
+            </div>
+        </div>
+
+        <div id ="wrapper">
+            <div id = "header">
+                <h1 id="logo" style="top: 125px;"><a href="index.html"><img src="img/nishizaki-logo.png" alt="Nishizaki"></a></h1>
+                <div id="btnAbout" class="font">
+                    <a href="javascript:clickBtn1()">About</a>
+                </div>
+                <div id="btnClose" class="font">
+                    <a href="javascript:clickBtn1()">Close</a>
+                </div>
+            </div>
+
+            
+             <main id="container">
+                <div class="person-image">
+                <img src="img/my_visual_all.JPG" alt="西﨑 慧" class="my-photo">
+            </div>
+                <section id="infographics" class="section">
+                    <h2 class="mv_title">数字で見る "西﨑 慧"</h2>
+                    <div class="infographics-layout">
+                        
+                        
+                        <div class="infographics-content">
+                            
+                            <div class="category">
+                                <h3 class="infographic-title">人柄</h3>
+                                <div class="data-group">
+                                    <div class="data-item">
+                                        <span class="label">身長</span>
+                                        <img src="img/chatIcon.svg" alt="身長" class="icon">
+                                        <span class="value">187.1</span><span class="unit">cm</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="label">出身地</span>
+                                        <span class="value">和歌山</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="label">テニス歴</span>
+                                        <span class="value">約20</span><span class="unit">年</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="label">飲みに行く回数</span>
+                                        <img src="img/chatIcon.svg" alt="飲み会のアイコン" class="icon" style="height: 24px; vertical-align: middle;">
+                                        <span class="value">約4</span><span class="unit">回/週</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="category">
+                                <h3 class="infographic-title">仕事・スキル</h3>
+                                <div class="data-group">
+                                    <div class="data-item progress-bar" data-progress="80">
+                                        <span class="label">プログラミング歴</span>
+                                        <span class="value">約5</span><span class="unit">年</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="label">最大規模システム</span>
+                                        <span class="value">約180</span><span class="unit">人月</span>
+                                    </div>
+                                    
+                                    <div class="data-item">
+                                        <span class="label">成功率</span>
+                                        <span class="value">11/12</span><span class="unit">件</span>
+                                    </div>
+                                </div>
+                                <div class="chart-container-large">
+                                    <canvas id="projectsChart"></canvas>
+                                    <p class="chart-label">プロジェクト件数推移</p>
+                                </div>
+
+                                <div class="chart-container">
+                                    <p class="chart-label">言語スタック比率</p>
+                                    <canvas id="languageStackChart"></canvas>
+                                    
+                                </div>
+                            </div>
+                            
+                            <hr>
+
+                            <div class="category">
+                                <h3 class="infographic-title">学び・成長</h3>
+                                <div class="data-group">
+                                    <div class="data-item">
+                                        <span class="label">学習時間</span>
+                                        <span class="value">約7</span><span class="unit">h/週</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="label">技術書籍購入冊数</span>
+                                        <span class="value">15</span><span class="unit">冊</span>
+                                    </div>
+                                </div>
+                                <div class="chart-container-large">
+                                    <canvas id="totalCertificationsChart"></canvas>
+                                    <p class="chart-label">資格取得総数推移</p>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="certificationTypeChart"></canvas>
+                                    <p class="chart-label">資格種類の割合</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <ul id="gnav" class="font">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projectsList.html">Projects</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="infographics.html">Infographics</a></li> 
+                <li><a href="humanity.html">Humanity</a></li>
+            </ul>
+        </div>
+
+        <div class="chat-Container">
+            <button class="chat-launcher" id="chat-launcher" type="button"></button>
+            <div class="chat-box" id="chat-box" style="display: none;">
+                <div class="chat-header">
+                    AI ChatBot
+                    <button class="close-button" id="close-button">×</button>
+                </div>
+                <div class="chat-messages" id="chat-messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="質問してください..." />
+                    <button id="send-button" type="button">送信</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <a href="#top" class="scroll-up-box mr-120" id="page-top">
+                TOP
+            </a>
+        </div>
+
+        <footer>
+          <p>&copy; 2025 Kei Nishizaki. All rights reserved.</p>
+        </footer>
+
+
+        <script type="text/javascript" src="js/about.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script> -->
+        <!-- <script src="js/startWindow.js"></script> -->
+        <script src="./js/chatbot.js"></script>
+        <script src="js/infographics.js"></script>
+    </body>
+        
+
+        
+
+</html>

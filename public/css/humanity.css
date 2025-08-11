@@ -1230,7 +1230,7 @@ p.tool {
 .modal-email-button {
     display: inline-block;
     /* background-color: var(--humanity-primary-brand-color); Primary brand color for email button */
-    color: rgb(249, 160, 160);
+    color: rgba(243, 144, 131, 0.888);
     padding: 15px 30px; /* Larger padding */
     border-radius: 8px;
     text-decoration: none;

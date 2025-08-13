@@ -8,9 +8,33 @@ document.addEventListener('DOMContentLoaded', function() {
     if (certificationTypeChartInstance) certificationTypeChartInstance.destroy();
     if (totalCertificationsChartInstance) totalCertificationsChartInstance.destroy();
 
+    // ページネーションのロジック
+    const paginationBtns = document.querySelectorAll('.pagination-btn');
+    const categories = document.querySelectorAll('.category');
+
+    // 初期表示
+    categories[0].classList.add('active');
+
+    paginationBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 全てのボタンからactiveクラスを外し、クリックされたボタンにactiveクラスを付ける
+            paginationBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 全てのカテゴリを非表示にする
+            categories.forEach(c => c.classList.remove('active'));
+
+            // クリックされたボタンに対応するカテゴリを表示する
+            const targetCategory = btn.getAttribute('data-category');
+            const targetElement = document.querySelector(`.category[data-category="${targetCategory}"]`);
+            if (targetElement) {
+                targetElement.classList.add('active');
+            }
+        });
+    });
 
 
- // プログレスバーのアニメーション
+    // プログレスバーのアニメーション
     const progressBar1 = document.querySelector('.progress-bar');
     if (progressBar1) {
         // プログラミング歴5年を10年中の進捗として表現する

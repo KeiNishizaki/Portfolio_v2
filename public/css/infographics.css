@@ -48,11 +48,15 @@ footer {
     max-width: 1200px;
 }
 
+/* #containerをFlexboxコンテナに変更 */
 #container {
-    width: 80%;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* 中央寄せ */
+    align-items: flex-start; /* 上端揃え */
+    gap: 50px; /* 要素間の隙間 */
     padding: 0 20px;
     max-width: 1200px;
+    margin: 0 auto;
 }
 .section {
     margin-bottom: 80px;
@@ -62,7 +66,7 @@ footer {
     overflow: hidden;
     width: 100%;
     max-width: 1200px;
-    margin-left: 50%;
+    /* margin-left: 50%; */
     margin-right: auto;
 }
 .font {
@@ -156,77 +160,6 @@ footer {
 #about.show {
     opacity: 1;
     visibility: visible;
-}
-
-/* ====================
-    FAQ Page Specific Styles
-==================== */
-.mv_title {
-    text-align: center;
-    margin: 80px 0 40px;
-    position: relative;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 2.5em;
-    font-weight: 700;
-}
-.mv_title .site_title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #333;
-}
-.mv_title .subtitle {
-    font-size: 1.5rem;
-    color: #555;
-}
-.interview-q {
-    flex: 1;
-    padding-right: 20px;
-    text-align: right;
-}
-.interview-q h2 {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 0.5em;
-    position: relative;
-    padding-bottom: 10px;
-}
-.interview-q h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 60px;
-    height: 3px;
-    background-color: #000;
-    transition: width 0.4s ease;
-}
-.interview-q h2:hover::after {
-    width: 100px;
-}
-.interview-a {
-    flex: 2;
-    padding-left: 20px;
-    border-left: 2px solid #ccc;
-}
-.interview-a p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #333;
-}
-.hgroup.row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-.appear {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s, transform 1s;
-}
-.appear.is-visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* ====================
@@ -424,40 +357,62 @@ footer {
 #infographics {
     padding: 60px 0;
 }
-
 .infographics-layout {
     display: flex;
+    justify-content: space-between;
     gap: 50px;
     align-items: flex-start;
+    padding: 50px 0;
 }
-
-/* my-photoを固定するための修正 */
 .person-image {
-    /* flex: 0 0 500px;  この行は削除またはコメントアウト */
-    position: sticky; /* スクロールに追従して固定する */
-    top: 50px; /* 画面の上端から50pxの位置で固定 */
-    height: 100vh; /* 画像を画面いっぱいの高さに合わせる */
-    /* display: flex; */
-    align-items: center; /* 垂直方向の中央揃え */
-    justify-content: center; /* 水平方向の中央揃え */
-    padding: 20px; /* 内側の余白 */
-    box-sizing: border-box; /* paddingを含めて高さ100vhにする */
+    width: 35%; /* 幅を調整 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.pagination-btn {
+    border: 1px solid #4A90E2;
+    background-color: #fff;
+    color: #4A90E2;
+    padding: 10px 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+.pagination-btn:hover,
+.pagination-btn.active {
+    background-color: #4A90E2;
+    color: #fff;
 }
 .my-photo {
-    max-width: 100%;
-    max-height: 80vh; /* 画面の高さからヘッダーなどの分を引いた高さに収める */
-    /* width: 40%; */
-    height: auto;
-    object-fit: contain; /* 画像のアスペクト比を維持して、指定のサイズ内に収める */
+    width: auto;
+    height: 75vh;
+    object-fit: contain;
     border-radius: 8px;
-    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
 }
-
 .infographics-content {
     flex: 1;
-    padding-top: 40px;
+    width: 65%; /* 幅を調整 */
 }
-
+.category {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.category.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 .infographic-title {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 2em;
@@ -467,17 +422,11 @@ footer {
     padding-left: 15px;
     margin: 40px 0 30px;
 }
-
-.category {
-    margin-bottom: 60px;
-}
-
 .data-group {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
 }
-
 .data-item {
     padding: 20px 30px;
     background-color: #f7f9fc;
@@ -486,26 +435,21 @@ footer {
     flex: 1 1 200px;
     text-align: center;
 }
-
 .label {
     display: block;
     font-size: 1em;
     color: #777;
     margin-bottom: 5px;
 }
-
 .value {
     font-size: 2.5em;
     font-weight: 700;
     color: #4A90E2;
 }
-
 .unit {
     font-size: 1.2em;
     color: #444;
 }
-
-/* グラフの表示を改善するためのスタイル */
 .chart-section {
     display: flex;
     flex-wrap: wrap;
@@ -513,49 +457,47 @@ footer {
     margin-top: 40px;
     justify-content: center;
 }
-
 .chart-container {
     width: 100%;
-    max-width: 350px; /* ドーナツグラフ用 */
+    max-width: 350px;
     text-align: center;
     margin: 100px;
 }
 .chart-container-large {
     width: 100%;
-    max-width: 500px; /* 横棒グラフや推移グラフ用 */
+    max-width: 500px;
     text-align: center;
 }
-
 .chart-label {
     margin-top: 15px;
     font-size: 1.1em;
     color: #555;
     font-weight: bold;
 }
-
 hr {
     border: none;
     height: 1px;
     background-color: #e0e0e0;
     margin: 50px 0;
 }
-
-/* ====================
-    Infographics Responsive
-==================== */
 @media (max-width: 992px) {
     .infographics-layout {
         flex-direction: column;
         align-items: center;
     }
     .person-image {
-        position: static; /* 小画面では固定を解除 */
+        position: static;
         height: auto;
-        flex: 1 1 auto;
         margin-bottom: 30px;
+        transform: none;
     }
     .my-photo {
         max-width: 250px;
+        height: auto;
+    }
+    .infographics-content {
+        width: 100%;
+        padding-top: 20px;
     }
     .chart-section {
         flex-direction: column;
@@ -600,8 +542,6 @@ hr {
     transition: width 1s ease-in-out;
     z-index: 0;
 }
-
-/* グラフのセクションをflexboxで調整 */
 .chart-section {
     display: flex;
     flex-wrap: wrap;
@@ -609,10 +549,9 @@ hr {
     margin-top: 40px;
     justify-content: center;
 }
-
 .chart-container-large {
     width: 100%;
-    max-width: 500px; /* 横棒グラフや折れ線グラフ用 */
+    max-width: 500px;
     text-align: center;
     margin: 20px 0;
 }

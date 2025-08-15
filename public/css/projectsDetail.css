@@ -1074,16 +1074,7 @@ footer{
     #lnav #btnPrev { margin-bottom: 50px; }
     #lnav #btnNext { margin-bottom: 30px; }
 }
-.font {
-  font-family: 'PT Sans', 'Noto Sans JP', sans-serif;
-  font-size: 100%;
-  letter-spacing: 0.1em;
-}
-.right {
-  float: right;
-  display: inline-block;
-  margin-top: 20px;
-}
+
 
 
 /* Large devices (desktops, 992px and up) */
@@ -1209,17 +1200,5 @@ footer{
     }
     .project-impression .txt {
         font-size: 1.1rem;
-    }
-
-   
-    /* ====================
-        ChatBot
-    ==================== */
-    .chat-box {
-        right: 100px;
-        width: 500px;
-    }
-    .chat-launcher {
-        right: 90px;
     }
 }

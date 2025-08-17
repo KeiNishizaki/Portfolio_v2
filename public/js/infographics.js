@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 例: 最大規模システム（180人月）を200人月中の進捗として表現する
         progressBar2.style.setProperty('--progress-width', `${(180 / 200) * 100}%`);
     }
+   
 
     // 言語スタック比率のドーナツグラフ
     const languageCtx = document.getElementById('languageStackChart');

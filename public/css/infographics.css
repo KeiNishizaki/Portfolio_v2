@@ -9,9 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 50px;
+  gap: 100px;
   padding: 0 20px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .section {
@@ -111,21 +111,49 @@
   align-items: center;
   padding-top: 50px;
 }
+
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 15px;
+  margin-bottom: 40px;
 }
 .pagination-btn {
-  border: 1px solid #4A90E2;
+  border: 1px solid #b7b7b7;
   background-color: #fff;
   color: #4A90E2;
-  padding: 10px 5px;
-  border-radius: 15px;
+  padding: 5px 10px;
+  border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  font-weight: bold;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-weight: bold; */
+}
+.tooltip {
+  position: absolute;
+  bottom: 120%; /* ボタンの上に表示 */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4A90E2;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* ホバー時に表示 */
+.pagination-btn:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
 }
 .pagination-btn:hover,
 .pagination-btn.active {
@@ -166,6 +194,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  margin-bottom: 30px;
 }
 .data-item {
   padding: 20px 30px;

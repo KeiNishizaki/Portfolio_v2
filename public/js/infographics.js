@@ -59,6 +59,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // いったことある都道府県
         progressBar4.style.setProperty('--progress-width', `${(31 / 47) * 100}%`);
     }
+    const progressBar5 = document.getElementById('progress-bar-5');
+    if (progressBar5) {
+        // テニス歴
+        progressBar5.style.setProperty('--progress-width', `${(20 / 26) * 100}%`);
+    }
+
+    const progressBar6 = document.getElementById('progress-bar-6');
+    if (progressBar6) {
+        // 飲みに行く頻度
+        progressBar6.style.setProperty('--progress-width', `${(3.5 / 7) * 100}%`);
+    }
+
 
     // 言語スタック比率のドーナツグラフ
     const languageCtx = document.getElementById('languageStackChart');
@@ -86,6 +98,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+// 身長の棒グラフ
+const tallCtx = document.getElementById('tallChart');
+if (tallCtx) {
+    tallChartInstance = new Chart(tallCtx, {
+        type: 'bar',
+        data: {
+            labels: ['中1', '高1', '大1', '新卒', '5年目'],
+            datasets: [{
+                label: '比較',
+                data: [158, 177, 182, 185, 187.8],
+                backgroundColor: [
+                    '#4A90E2', // 中1
+                    '#4A90E2', // 高1
+                    '#4A90E2', // 大1
+                    '#4A90E2', // 新卒
+                    '#f8955be9'  // 5年目だけ赤
+                ],
+                borderRadius: 5,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    min: 140,
+                    title: {
+                        display: true,
+                        text: '身長(cm)'
+                    }
+                }
+            }
+        }
+    });
+}
+
 
     // プロジェクト件数の棒グラフ
     const projectsCtx = document.getElementById('projectsChart');

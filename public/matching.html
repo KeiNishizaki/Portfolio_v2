@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>企業とのマッチング診断</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/common.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/matching.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+  <script src="js/about.js"></script>
+  <script src="js/matching.js" defer></script>
+  <!-- <script src="js/startWindow.js"></script> -->
+  <script src="./js/chatbot.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div id="about">
+      <div id="aboutInner" class="cf">
+        <dl>
+          <dt class="font">PROFILE :</dt>
+          <dd>西崎慧　　Nishizaki　Kei<br>
+            和歌山県和歌山市　出身<br>
+            和歌山大学システム工学部メディアデザインメジャー　卒業<br>
+          </dd>
+          <dt class="font">CONTACT :</dt>
+          <dd><a href="mailto:nszkki.19981116@gmail.com" target="_blank">nszkki.19981116@gmail.com</a></dd>
+          <dt class="font">ADDRESS :</dt>
+          <dd class="last">大阪府大阪市<br>
+            Osakashi, Osakafu Japan</dd>
+        </dl>
+        <div class="right"><img src="img/myimage.jpg" alt="" width="140"></div>
+      </div>
+    </div>
+  </header>
+  <div id="wrapper">
+    <div id="header">
+      <h1 id="logo"><a href="index.html"><img src="img/nishizaki-logo.png" alt="Nishizaki"></a></h1>
+      <div id="btnAbout" class="font">
+        <a href="javascript:clickBtn1()">About</a>
+      </div>
+      <div id="btnClose" class="font">
+        <a href="javascript:clickBtn1()">Close</a>
+      </div>
+    </div>
+    <div id="container">
+      <div id="articleContainer">
+        <div class="section matching-section" id="matchingSection">
+          <div class="mv_title">
+            <h2 class="site_title">企業とのマッチング診断</h2>
+            <div class="typed_wrap">
+              <p>あなたのポートフォリオについて5つの項目で評価してください。</p>
+            </div>
+          </div>
+          <!-- 診断フォーム（matching.htmlの内容を移植） -->
+          <div class="matching-form" id="matching-form">
+            <div id="page-1" class="page">
+              <div class="section-title">1. スキル・専門性 (Hard Skills)</div>
+              <p>（5:非常に高い - 1:低い）</p>
+              <div class="form-group">
+                <label for="skill1">貴社が求める技術スタックの経験はどの程度を期待しますか？</label>
+                <select id="skill1" name="skill1">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="skill2">最新技術やトレンドに対し、キャッチアップが速い人材を求めますか？</label>
+                <select id="skill2" name="skill2">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="skill3">複雑な技術的課題を論理的に解決する力を持った方を期待しますか？</label>
+                <select id="skill3" name="skill3">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="skill4">コードの品質や設計意図が明確なポートフォリオを重視しますか？</label>
+                <select id="skill4" name="skill4">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="skill5">担当分野以外の技術にも、積極的に学習する意欲を感じる方を求めますか？</label>
+                <select id="skill5" name="skill5">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="navigation">
+                <button type="button" class="nav-button next-page" data-target="page-2">次へ</button>
+              </div>
+            </div>
+            <div id="page-2" class="page">
+              <div class="section-title">2. 業務遂行能力・成果 (Performance)</div>
+              <p>（5:非常に高い - 1:低い）</p>
+              <div class="form-group">
+                <label for="performance1">自ら課題を見つけて解決する、自律的な働き方を期待しますか？</label>
+                <select id="performance1" name="performance1">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="performance2">プロジェクトを最後まで責任を持ってやり遂げる力を持った方を求めますか？</label>
+                <select id="performance2" name="performance2">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="performance3">ビジネス的な成功に貢献する成果を出せる方を期待しますか？</label>
+                <select id="performance3" name="performance3">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="performance4">不確実性の高い状況でも、柔軟に対応できる人物を求めますか？</label>
+                <select id="performance4" name="performance4">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="performance5">チームや組織の目標達成に貢献する意識が高い方を重視しますか？</label>
+                <select id="performance5" name="performance5">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="navigation">
+                <button type="button" class="nav-button prev-page" data-target="page-1">戻る</button>
+                <button type="button" class="nav-button next-page" data-target="page-3">次へ</button>
+              </div>
+            </div>
+            <div id="page-3" class="page">
+              <div class="section-title">3. コミュニケーション能力・協調性 (Soft Skills)</div>
+              <p>（5:非常に高い - 1:低い）</p>
+              <div class="form-group">
+                <label for="communication1">チームメンバーや他部署と円滑に連携できる方を求めますか？</label>
+                <select id="communication1" name="communication1">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="communication2">自分の意見だけでなく、他者の意見も尊重し、議論を深めることができる方を期待しますか？</label>
+                <select id="communication2" name="communication2">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="communication3">チーム内で積極的に情報共有や質問を行う姿勢がある方を求めますか？</label>
+                <select id="communication3" name="communication3">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="communication4">報告・連絡・相談（ホウレンソウ）を適切に行うことを重視しますか？</label>
+                <select id="communication4" name="communication4">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="communication5">異なるバックグラウンドを持つメンバーと、スムーズに協業できる方を求めますか？</label>
+                <select id="communication5" name="communication5">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="navigation">
+                <button type="button" class="nav-button prev-page" data-target="page-2">戻る</button>
+                <button type="button" class="nav-button next-page" data-target="page-4">次へ</button>
+              </div>
+            </div>
+            <div id="page-4" class="page">
+              <div class="section-title">4. 企業文化・価値観への適合度 (Cultural Fit)</div>
+              <p>（5:非常に合う - 1:合わない）</p>
+              <div class="form-group">
+                <label for="culture1">貴社の変化の速い環境や、裁量の大きい仕事を楽しめる方を期待しますか？</label>
+                <select id="culture1" name="culture1">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="culture2">貴社のミッションやビジョンに深く共感できる方を求めますか？</label>
+                <select id="culture2" name="culture2">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="culture3">自社のサービスや顧客への強い情熱を感じる方を重視しますか？</label>
+                <select id="culture3" name="culture3">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="culture4">オープンでフラットな組織文化にフィットする方を期待しますか？</label>
+                <select id="culture4" name="culture4">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="culture5">失敗を恐れず、そこから学びを得るマインドを持った方を求めますか？</label>
+                <select id="culture5" name="culture5">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="navigation">
+                <button type="button" class="nav-button prev-page" data-target="page-3">戻る</button>
+                <button type="button" class="nav-button next-page" data-target="page-5">次へ</button>
+              </div>
+            </div>
+            <div id="page-5" class="page">
+              <div class="section-title">5. 成長意欲・ポテンシャル (Growth Mindset)</div>
+              <p>（5:非常に高い - 1:低い）</p>
+              <div class="form-group">
+                <label for="growth1">将来的に専門分野を深めるスペシャリスト志向の方を求めますか？</label>
+                <select id="growth1" name="growth1">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="growth2">将来的にチームを率いるマネジメント志向の方を求めますか？</label>
+                <select id="growth2" name="growth2">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="growth3">キャリアプランを明確に描き、自主的にスキルアップできる方を期待しますか？</label>
+                <select id="growth3" name="growth3">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="growth4">新しい役割や責任を任されることに意欲的な方を求めますか？</label>
+                <select id="growth4" name="growth4">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="growth5">困難な状況でもポジティブに考え、成長の機会と捉えることができる方を期待しますか？</label>
+                <select id="growth5" name="growth5">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3" selected>3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div class="navigation">
+                <button type="button" class="nav-button prev-page" data-target="page-4">戻る</button>
+                <button type="button" class="nav-button" id="submit-button">診断結果を見る</button>
+              </div>
+            </div>
+            <div id="result-page" class="page result-section">
+              <h2>診断結果</h2>
+              <p id="matching-rate"></p>
+              <p>※入力者からの評価と自己評価を比較しています。</p>
+              <div id="chart-container">
+                <canvas id="radarChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul id="gnav" class="font">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projectsList.html">Projects</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="infographics.html">Infographics</a></li> 
+        <li><a href="matching.html">Matching</a></li> 
+      </ul>
+    </div>
+    <div class="chat-Container">
+      <button class="chat-launcher" id="chat-launcher" type="button"></button>
+      <div class="chat-box" id="chat-box" style="display: none;">
+        <div class="chat-header">
+          AI ChatBot
+          <button class="close-button" id="close-button">×</button>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+          <input type="text" id="user-input" placeholder="質問してください..." />
+          <button id="send-button" type="button">送信</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <a href="#top" class="scroll-up-box mr-120" id="page-top">
+        TOP
+      </a>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Kei Nishizaki. All rights reserved.</p>
+  </footer>
+</body>
+</html>

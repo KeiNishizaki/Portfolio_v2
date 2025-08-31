@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>企業とのマッチング診断</title>
+  <title>NISHIZAKI　KEI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/common.css" rel="stylesheet" type="text/css" media="all" />
   <link href="css/matching.css" rel="stylesheet" type="text/css" media="all" />
@@ -49,14 +49,24 @@
           <div class="mv_title">
             <h2 class="site_title">企業とのマッチング診断</h2>
             <div class="typed_wrap">
-              <p>あなたのポートフォリオについて5つの項目で評価してください。</p>
+              <p>御社が最低限求める人物像について5つの項目で評価してください。</p>
+            </div>
+            <div class="criteria-box">
+              <div class="criteria-title">【評価基準】</div>
+              <ul class="criteria-list">
+                <li><span class="criteria-score">5:</span> 非常に重要 <span class="criteria-desc">（このスキル・能力がないと業務遂行が困難）</span></li>
+                <li><span class="criteria-score">4:</span> 重要 <span class="criteria-desc">（このスキル・能力があると業務を円滑に進められる）</span></li>
+                <li><span class="criteria-score">3:</span> 平均的／最低限必要 <span class="criteria-desc">（このスキル・能力は入社後の育成で十分補える）</span></li>
+                <li><span class="criteria-score">2:</span> あまり重要ではない <span class="criteria-desc">（このスキル・能力は今回の募集では必須ではない）</span></li>
+                <li><span class="criteria-score">1:</span> 全く重要ではない <span class="criteria-desc">（このスキル・能力は業務に関係がない）</span></li>
+              </ul>
             </div>
           </div>
           <!-- 診断フォーム（matching.htmlの内容を移植） -->
           <div class="matching-form" id="matching-form">
             <div id="page-1" class="page">
               <div class="section-title">1. スキル・専門性 (Hard Skills)</div>
-              <p>（5:非常に高い - 1:低い）</p>
+              
               <div class="form-group">
                 <label for="skill1">貴社が求める技術スタックの経験はどの程度を期待しますか？</label>
                 <select id="skill1" name="skill1">
@@ -347,9 +357,13 @@
               <h2>診断結果</h2>
               <p id="matching-rate"></p>
               <p>※入力者からの評価と自己評価を比較しています。</p>
-              <div id="chart-container">
+              <div id="chart-container" style="position:relative;">
                 <canvas id="radarChart"></canvas>
+                <button type="button" class="share-icon-btn" id="share-result" title="診断結果を共有する">
+                  <img src="img/matching/share_40dp_1F1F1_FILL0_wght400_GRAD0_opsz40.png" alt="共有" style="width:32px;height:32px;">
+                </button>
               </div>
+              <button type="button" class="nav-button" id="submit-rturn">もう一度試す</button>
             </div>
           </div>
         </div>

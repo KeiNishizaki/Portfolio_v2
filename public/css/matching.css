@@ -333,5 +333,60 @@ hr {
   padding-bottom: 10px;
   /* background: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%); */
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+  /* box-shadow: 0 2px 8px rgba(52,152,219,0.08); */
+}
+.share-icon-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  transition: transform 0.2s;
+}
+.share-icon-btn:hover {
+  transform: scale(1.15);
+}
+.criteria-box {
+  background: #f7f9fc;
+  border-radius: 8px;
+  padding: 18px 20px 12px 20px;
+  margin: 18px 0 30px 0;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.06);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.criteria-title {
+  font-weight: bold;
+  color: #3498db;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  letter-spacing: 0.03em;
+}
+.criteria-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.criteria-list li {
+  margin-bottom: 8px;
+  font-size: 1em;
+  display: flex;
+  align-items: baseline;
+}
+.criteria-score {
+  font-weight: bold;
+  color: #2980b9;
+  margin-right: 6px;
+  font-size: 1.1em;
+  min-width: 2em;
+  display: inline-block;
+}
+.criteria-desc {
+  color: #888;
+  font-size: 0.95em;
+  margin-left: 8px;
 }

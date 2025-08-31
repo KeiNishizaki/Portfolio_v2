@@ -86,6 +86,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // 戻るボタン
+  document.getElementById('submit-rturn').addEventListener('click', function() {
+    // 診断結果画面を非表示
+    document.getElementById('result-page').style.display = 'none';
+    // 最初のページを表示
+    document.getElementById('page-1').style.display = 'block';
+    // 必要ならフォームの値をリセット
+    document.querySelectorAll('.matching-form select').forEach(select => {
+      select.value = "3";
+    });
+  });
+
+  // 結果共有ボタン
+  document.getElementById('share-result').addEventListener('click', function() {
+    // レーダーチャートを画像化
+    const chartCanvas = document.getElementById('radarChart');
+    const imageData = chartCanvas.toDataURL('image/png');
+    // メール送信用リンク作成
+    const subject = encodeURIComponent('診断結果の共有');
+    const body = encodeURIComponent('診断結果画像を添付してください。\n\n' + imageData);
+    window.open(`mailto:nszkki.19981116@gmail.com?subject=${subject}&body=${body}`);
+  });
+
   // 初期表示
   document.querySelectorAll('.page').forEach((page, idx) => {
     page.style.display = idx === 0 ? 'block' : 'none';

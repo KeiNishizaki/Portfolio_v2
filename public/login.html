@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NISHIZAKI KEI</title>
+    <meta charset="UTF-8">
+    <link href="css/common.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/indexstyle.css" rel="stylesheet" type="text/css" media="all" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>ログイン</h2>
+      <form id="loginForm">
+        <label for="userid">ID:</label>
+        <input type="text" id="userid" name="userid" required>
+        <br>
+        <label for="password">PW:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">ログイン</button>
+      </form>
+      <div id="loginMessage" style="color:red; margin-top:10px;"></div>
+    </div>
+    <script src="js/login.js"></script>
+  </body>
+</html>

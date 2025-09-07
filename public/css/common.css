@@ -21,10 +21,10 @@ a {
  color: #696969;
  text-decoration: none;
 }
-a:hover {
- font-size: 1.5em;
+/* a:hover {
+ font-size: 1.2em;
  font-weight: bold;
-}
+} */
 ul, ol {
  padding: 0;
  list-style: none;

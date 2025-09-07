@@ -49,10 +49,10 @@ select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;
     padding: 10px 0;
     height: auto;
   }
-  #logo {
+  /* #logo {
     margin-bottom: 10px;
     text-align: center;
-  }
+  } */
   .mv_title {
     margin-top: 80px; /* ロゴと重ならないように余白追加 */
   }

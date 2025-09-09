@@ -813,27 +813,37 @@ footer{
     }
 
     .project-head-content {
-        flex-direction: row; /* 横並びに戻す */
-        align-items: center;
+        display: flex; /* Flexboxを適用 */
+        flex-direction: column; /* タブレット（iPad）では縦並びを維持 */
+        align-items: center; /* 中央寄せ */
+        width: 100%;
+        overflow: hidden;
         margin-top: 30px;
+        gap: 20px; /* 画像とテキストの間に隙間を空ける */
     }
+
     .project-bg {
-        width: 40vh; /* タブレット向けに調整 */
+        width: 80%; /* 幅を調整 */
         height: auto;
-        order: unset; /* orderをリセット */
+        order: 1; /* 画像を上に配置 */
     }
+    
     .project-bg img {
-        object-fit: contain; /* 元のobject-fitに戻す */
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
+
     .project-text-container {
-        position: absolute; /* 絶対配置に戻す */
-        top: 50%;
-        transform: translateY(-50%);
-        right: 10%; /* 右からの距離を調整 */
-        max-width: 50%; /* 幅を調整 */
+        position: static; /* 絶対配置を解除 */
+        top: auto;
+        transform: none;
+        right: auto;
+        width: 80%; /* 画像と幅を合わせる */
+        max-width: none;
         margin-top: 0;
-        padding: 1.8rem; /* パディング調整 */
-        order: unset;
+        padding: 1.8rem;
+        order: 2; /* テキストを下に配置 */
     }
     .project-concept h2 {
         font-size: 1.5rem;
@@ -1108,15 +1118,27 @@ footer{
     .project-head .section-title {
         font-size: 2.2rem;
     }
+    .project-head-content {
+        flex-direction: row; /* 横並びのレイアウトを維持 */
+        align-items: center;
+        margin-top: 30px; /* 必要に応じて調整 */
+    }
 
     .project-bg {
         width: 60vh; /* デスクトップ向けに調整 */
+        order: 1; /* 左側に配置 */
     }
     .project-text-container {
-        right: 5%; /* デスクトップ向けに調整 */
-        /* max-width: 500px; デスクトップ向けに調整 */
+        position: absolute; /* 絶対配置に戻す */
+        top: 50%;
+        transform: translateY(-40%);
+        right: 5%; /* 右からの距離を調整 */
+        max-width: 500px; /* 幅を調整 */
+        margin-top: 0;
         padding: 2.5rem;
+        order: unset; /* orderをリセット */
     }
+    
     .project-concept h2 {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;

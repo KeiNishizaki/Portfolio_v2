@@ -139,6 +139,7 @@ footer {
 }
 @media (min-width: 768px) {
   #logo {
+   
     position: fixed;
     top: 125px;
     left: 5%;

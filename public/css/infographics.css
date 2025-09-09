@@ -166,7 +166,7 @@
 }
 .my-photo {
   width: auto;
-  height: 75vh;
+  height: 65vh;
   object-fit: contain;
   border-radius: 8px;
 }

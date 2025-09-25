@@ -5,38 +5,51 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   const password = document.getElementById('password').value;
   const msg = document.getElementById('loginMessage');
 
-  // FunctionsのURLを構築
-  const functionUrl = '/api/getLoginInfo'; // Static Web Appsの相対パスを使用
+  const functionUrl = '/api/getLoginInfo'; 
+  const requestBody = { userid, password };
+
+  console.log('--- 送信するリクエスト情報 ---');
+  console.log('URL:', functionUrl);
+  console.log('Method:', 'POST');
+  console.log('Headers:', { 'Content-Type': 'application/json' });
+  console.log('Body:', JSON.stringify(requestBody));
 
   fetch(functionUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ userid, password }),
+    body: JSON.stringify(requestBody),
   })
   .then(response => {
-    // レスポンスが正常か確認
+    // レスポンスのログを出力
+    console.log('--- サーバーからの応答 ---');
+    console.log('Status:', response.status);
+    console.log('Headers:', response.headers);
+    
+    // エラーレスポンスをJSONとして解析しようとせず、そのまま表示
+    if (response.status === 405) {
+      return response.text().then(text => {
+        throw new Error(`エラーコード 405 (Method Not Allowed): ${text}`);
+      });
+    }
+
     if (response.ok) {
       return response.json();
     } else {
-      // 400, 401, 500などのエラーレスポンスを処理
-      return response.json().then(errorData => {
-        throw new Error(errorData.message || '認証に失敗しました。');
+      return response.text().then(text => {
+        throw new Error(`HTTPエラー: ${response.status} - ${text}`);
       });
     }
   })
   .then(data => {
-    // 認証成功の処理
     msg.textContent = data.message;
     msg.style.color = 'green';
-    
-    // ログイン状態を保存し、ページをリダイレクト
     localStorage.setItem('isLoggedIn', 'true');
     window.location.href = 'index.html';
   })
   .catch(error => {
-    // 認証失敗の処理
+    console.error('Fetch Error:', error);
     msg.textContent = error.message || '認証中にエラーが発生しました。';
     msg.style.color = 'red';
     localStorage.removeItem('isLoggedIn');

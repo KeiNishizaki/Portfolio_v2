@@ -1,8 +1,9 @@
 {
   "routes": [
     {
-      "route": "/",
-      "redirect": "/login.html"
+      "route": "/api/*",
+      "allowedRoles": ["anonymous", "authenticated"]
     }
-  ]
+  ],
+  "api_path": "https://func-myportfolio.azurewebsites.net"
 }

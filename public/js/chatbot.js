@@ -1,4 +1,3 @@
-
 const FUNCTION_APP_URL = "https://func-myportfolio-hydgfzfsebesejd2.japanwest-01.azurewebsites.net/api/chatbot"; 
 
 // 1. DOM要素の取得
@@ -44,25 +43,22 @@ input.addEventListener('keypress', (e) => {
  */
 function appendMessage(sender, content, isLoading = false) {
     const messageDiv = document.createElement("div");
-    // あなたは chat-user、Botは chat-bot というクラスを CSS で定義してください
     messageDiv.classList.add("message", sender === "あなた" ? "chat-user" : "chat-bot");
-    
-    const contentElement = document.createElement("p");
-    // ロード中のスタイル（CSSでアニメーションを定義することを推奨）
+
+    // 送信者名を太字で表示
+    const senderElement = document.createElement("strong");
+    senderElement.innerText = `${sender}: `;
+    messageDiv.appendChild(senderElement);
+
+    const contentElement = document.createElement("span");
     if (isLoading) {
         contentElement.classList.add("loading");
     }
     contentElement.innerText = content;
-    
-    // 送信者名を表示する場合はこちら（今回は省略し、CSSで背景色などで区別するのが一般的）
-    // messageDiv.innerHTML = `<span style="font-weight:bold;">${sender}: </span>`;
-    
     messageDiv.appendChild(contentElement);
+
     chatContainer.appendChild(messageDiv);
-    
-    // 最新メッセージが見えるようにスクロール
     chatContainer.scrollTop = chatContainer.scrollHeight;
-    
     return messageDiv;
 }
 

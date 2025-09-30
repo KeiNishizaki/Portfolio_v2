@@ -87,28 +87,26 @@ function sendMessage() {
     })
     .then(response => {
         // ロード中表示から 'loading' クラスを削除
-        const loadingParagraph = botMessageElement.querySelector('p');
-        if (loadingParagraph && loadingParagraph.classList.contains('loading')) {
-            loadingParagraph.classList.remove('loading');
+        const loadingSpan = botMessageElement.querySelector('span');
+        if (loadingSpan && loadingSpan.classList.contains('loading')) {
+            loadingSpan.classList.remove('loading');
         }
 
         if (!response.ok) {
-            // HTTPステータスが200番台以外の場合
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
     })
     .then(data => {
-        // Functionsからの応答で既存の要素を更新
         const reply = data.reply || "エラー: 正しい応答が得られませんでした。";
-        botMessageElement.querySelector('p').innerText = reply;
+        const replySpan = botMessageElement.querySelector('span');
+        if (replySpan) replySpan.innerText = reply;
     })
     .catch(error => {
-        // エラーメッセージで既存の要素を更新
         console.error("Fetch Error:", error);
         const errorMessage = `エラーが発生しました: ${error.message} (コンソールを確認してください)`;
-        botMessageElement.querySelector('p').innerText = errorMessage;
-        // エラー時のスタイルを適用したい場合はここにクラスを追加
+        const errorSpan = botMessageElement.querySelector('span');
+        if (errorSpan) errorSpan.innerText = errorMessage;
     })
     .finally(() => {
         // 処理終了後に元に戻す

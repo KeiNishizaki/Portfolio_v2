@@ -1,52 +1,124 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const launcher = document.getElementById("chat-launcher");
-  const chatBox = document.getElementById("chat-box");
-  const closeBtn = document.getElementById("close-button");
-  const input = document.getElementById("user-input");
-  const messages = document.getElementById("chat-messages");
-  const sendBtn = document.getElementById("send-button");
 
-  launcher.addEventListener("click", () => {
-    chatBox.style.display = "flex";
-    launcher.style.display = "none";
-    input.focus();
-  });
+const FUNCTION_APP_URL = "https://func-myportfolio-hydgfzfsebesejd2.japanwest-01.azurewebsites.net/api/chatbot"; 
 
-  closeBtn.addEventListener("click", () => {
-    chatBox.style.display = "none";
-    launcher.style.display = "block";
-  });
+// 1. DOM要素の取得
+const chatLauncher = document.getElementById("chat-launcher");
+const chatBox = document.getElementById("chat-box");
+const closeButton = document.getElementById("close-button");
 
-  sendBtn.addEventListener("click", () => {
-    sendMessage();
-  });
+const chatContainer = document.getElementById("chat-messages"); // メッセージ表示エリア
+const input = document.getElementById("user-input");          // 入力欄
+const sendBtn = document.getElementById("send-button");        // 送信ボタン
 
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      sendMessage();
+
+// 2. UIの開閉処理
+chatLauncher.addEventListener('click', () => {
+    // ランチャーボタンを押したらチャットボックスを表示/非表示切り替え
+    chatBox.style.display = chatBox.style.display === 'none' ? 'flex' : 'none';
+    if (chatBox.style.display === 'flex') {
+        input.focus(); // 開いたときに入力欄にフォーカス
     }
-  });
+});
 
-  function sendMessage() {
+closeButton.addEventListener('click', () => {
+    // 閉じるボタンを押したらチャットボックスを非表示
+    chatBox.style.display = 'none';
+});
+
+// 3. メッセージ送信処理のトリガー設定
+sendBtn.addEventListener('click', sendMessage);
+input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+
+// 4. メッセージ表示ヘルパー関数
+/**
+ * チャットコンテナにメッセージを追加する
+ * @param {string} sender - 送信者 ("あなた" または "Bot")
+ * @param {string} content - メッセージ内容
+ * @param {boolean} isLoading - ロード中表示フラグ
+ * @returns {HTMLElement} - 追加されたメッセージ要素
+ */
+function appendMessage(sender, content, isLoading = false) {
+    const messageDiv = document.createElement("div");
+    // あなたは chat-user、Botは chat-bot というクラスを CSS で定義してください
+    messageDiv.classList.add("message", sender === "あなた" ? "chat-user" : "chat-bot");
+    
+    const contentElement = document.createElement("p");
+    // ロード中のスタイル（CSSでアニメーションを定義することを推奨）
+    if (isLoading) {
+        contentElement.classList.add("loading");
+    }
+    contentElement.innerText = content;
+    
+    // 送信者名を表示する場合はこちら（今回は省略し、CSSで背景色などで区別するのが一般的）
+    // messageDiv.innerHTML = `<span style="font-weight:bold;">${sender}: </span>`;
+    
+    messageDiv.appendChild(contentElement);
+    chatContainer.appendChild(messageDiv);
+    
+    // 最新メッセージが見えるようにスクロール
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+    
+    return messageDiv;
+}
+
+
+// 5. Functionsとの連携（API呼び出し）
+function sendMessage() {
     const message = input.value.trim();
     if (!message) return;
 
+    // 1. ユーザーメッセージの表示と入力の無効化
     appendMessage("あなた", message);
     input.value = "";
-    // alert(message)
-    // ダミー返信（API連携時に置き換え可能）
-    setTimeout(() => {
-      appendMessage("Bot", "ご質問ありがとうございます。現在準備中です。");
-    }, 800);
+    input.disabled = true; 
+    sendBtn.disabled = true; 
+    
+    // 2. Botのロード中表示を追加
+    let botMessageElement = appendMessage("Bot", "思考中...", true); // ロード中要素を取得
 
-    input.focus();
-  }
+    // API連携
+    fetch(FUNCTION_APP_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: message }),
+    })
+    .then(response => {
+        // ロード中表示から 'loading' クラスを削除
+        const loadingParagraph = botMessageElement.querySelector('p');
+        if (loadingParagraph && loadingParagraph.classList.contains('loading')) {
+            loadingParagraph.classList.remove('loading');
+        }
 
-  function appendMessage(sender, text) {
-    const msg = document.createElement("div");
-    msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
-    messages.appendChild(msg);
-    messages.scrollTop = messages.scrollHeight;
-  }
-});
+        if (!response.ok) {
+            // HTTPステータスが200番台以外の場合
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Functionsからの応答で既存の要素を更新
+        const reply = data.reply || "エラー: 正しい応答が得られませんでした。";
+        botMessageElement.querySelector('p').innerText = reply;
+    })
+    .catch(error => {
+        // エラーメッセージで既存の要素を更新
+        console.error("Fetch Error:", error);
+        const errorMessage = `エラーが発生しました: ${error.message} (コンソールを確認してください)`;
+        botMessageElement.querySelector('p').innerText = errorMessage;
+        // エラー時のスタイルを適用したい場合はここにクラスを追加
+    })
+    .finally(() => {
+        // 処理終了後に元に戻す
+        input.disabled = false;
+        sendBtn.disabled = false;
+        input.focus();
+    });
+
+}

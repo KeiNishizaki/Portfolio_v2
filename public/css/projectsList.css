@@ -488,7 +488,7 @@ footer{
 .projectList .box .desc .txt {
   font-size: 17px; /* 文字サイズを大きく */
   line-height: 1.8; /* 行の高さを調整して読みやすく */
-  margin-top: 15px; /* 上の要素からの余白 */
+  margin: 15px; /* 上の要素からの余白 */
   margin-bottom: 25px; /* 下の要素への余白 */
   color: #3E4550; /* 説明文の色をデフォルトに戻す */
 }

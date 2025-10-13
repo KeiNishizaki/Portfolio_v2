@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
    
 
-    const progressBar4 = document.getElementById('progress-bar-4');
-    if (progressBar4) {
-        // いったことある都道府県
-        progressBar4.style.setProperty('--progress-width', `${(31 / 47) * 100}%`);
-    }
+    // const progressBar4 = document.getElementById('progress-bar-4');
+    // if (progressBar4) {
+    //     // いったことある都道府県
+    //     progressBar4.style.setProperty('--progress-width', `${(31 / 47) * 100}%`);
+    // }
     const progressBar5 = document.getElementById('progress-bar-5');
     if (progressBar5) {
         // テニス歴

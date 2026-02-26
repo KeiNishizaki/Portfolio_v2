@@ -1,314 +1,212 @@
 <!DOCTYPE html>
-
-
+<html lang="ja">
     <head>
-
-        <title>NISHIZAKI　KEI</title>
-        
+        <title>NISHIZAKI KEI - RAG技術を活用した社内FAQ構築</title>
         <meta charset="UTF-8">
-        <link href="css\common.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/common.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/projectsDetail.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
-        <!-- Font Awesome 5 -->
         <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
 
-        
-
-        <script type="text/javascript" src="js\about.js"></script>
-
-         <!--アニメーション-->
-       <!-- Lightbox -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script> -->
-
-        <!-- sectionのスライドアニメーション -->
+        <script type="text/javascript" src="js/about.js"></script>
         <script src="js/sectionAnimation.js"></script>
-        <!--ChatBot-->
-        <!-- <script src="./js/chatbot.js"></script> -->
         <script src="js/auth.js"></script>
-    
-
     </head>
-        
 
     <body>
         <header>
-            <!-- <div id="cursor" class="cursor" style="opacity: 1; top: 450px; left: 2848px;"></div> -->
-            <div id="about"><!--最初は非表示-->
-
-
+            <div id="about"><div id="aboutInner" class="cf">
+                    <dl>
+                        <dt class="font">PROFILE :      </dt>
+                        <dd>西崎慧　　Nishizaki Kei<br>
+                            和歌山県和歌山市　出身<br>
+                            和歌山大学システム工学部メディアデザインメジャー　卒業<br>
+                        </dd>
                         
-                    <div id="aboutInner" class="cf">
-                        <dl>
-                            <dt class="font">PROFILE :      </dt>
+                        <dt class="font">CONTACT :      </dt>
+                        <dd><a href="mailto:nszkki.19981116@gmail.com" target="_blank">nszkki.19981116@gmail.com</a></dd>
                         
-                            <dd>西崎慧　　Nishizaki　Kei<br>
-                                和歌山県和歌山市　出身<br>
-                                和歌山大学システム工学部メディアデザインメジャー　卒業<br>
-                            </dd>
-                            
-                            <dt class="font">CONTACT :      </dt>
-                            <dd><a href="mailto:nszkki.19981116@gmail.com" target="_blank">nszkki.19981116@gmail.com</a></dd>
-                            
-                            <dt class="font">ADDRESS :      </dt>
-                            <dd class="last">大阪府大阪市<br>
-                            Osakashi, Osakafu Japan</dd>
-
-                        </dl>
-
-                        <div class="right"><img src="img\myimage.jpg" alt="" width="140"></div>
-
-                    </div>
-
-
-
+                        <dt class="font">ADDRESS :      </dt>
+                        <dd class="last">大阪府大阪市<br>
+                        Osakashi, Osakafu Japan</dd>
+                    </dl>
+                    <div class="right"><img src="img/myimage.jpg" alt="西崎慧" width="140"></div>
+                </div>
             </div>
         </header>
 
-
-            
-
-        <div id ="wrapper">
-            <div id = "header">
-    
-                <h1 id="logo" style="top: 125px;"><a href="index.html"><img src="img\nishizaki-logo.png" alt="Nishizaki s226186@wakayaam-u.ac.jp"></a></h1>
+        <div id="wrapper">
+            <div id="header">
+                <h1 id="logo" style="top: 125px;"><a href="index.html"><img src="img/nishizaki-logo.png" alt="Nishizaki"></a></h1>
                 <div id="btnAbout" class="font">
-                <a href="javascript:clickBtn1()">About</a><!--about.jsから関数を呼ぶ-->
-                </div><!--aboutボタンを押すとプロフィール表示する-->
+                    <a href="javascript:clickBtn1()">About</a></div><div id="btnClose" class="font">
+                    <a href="javascript:clickBtn1()">Close</a></div></div><div id="articleContainer">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="projectsList.html">プロジェクト一覧</a></li>
+                        <li><a href="projectsDetail_RAG.html">RAG技術を活用した社内FAQ構築</a></li>
+                    </ol>
+                </nav>
 
-                <div id="btnClose" class="font">
-                <a href="javascript:clickBtn1()">Close</a><!--about.jsから関数を呼ぶ-->
-                </div><!--closeボタンを押すとプロフィール非表示する-->
-
-
-            </div><!-- /#header -->
-
-            <!--作品を書く-->
-        <!-- <div id="container"> -->
-
-
-                <div id="articleContainer">
-
-                    <nav>
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">ホーム</a></li>
-                            <li><a href="projectsList.html">プロジェクト一覧</a></li>
-                            <li><a href="projectsDetail_RAG.html">RAG技術を活用した社内FAQ構築</a></li>
-                        </ol>
-                    </nav>
-
-                    
-                    
-                    <div class="projectDetail">
-                        <!-- プロジェクト概要 -->
-                        <div class="project-head">
-                            <h3 class="project-date">2025/06　～</h3>
-                            <h2 class="section-title">04. RAG技術を活用した社内FAQ構築</h2> <div class="project-head-content">
-                                <!-- <div class="project-bg">
-                                    <img src="img/projects/inventory_img.png" alt="棚卸システムのイメージ画像">
-                                </div>
-                                
-                                <div class="project-text-container">
-                                    <div class="project-concept">
-                                        <h2>
-                                            <span>初めての開発案件で画面デザインを担当</span>
-                                        </h2>
-                                    </div>
-                                    <div class="project-desc">
-                                        <p class="txt">
-                                           初めてのプロジェクトを経験し、開発プロセスを一通り経験した。
-                                           また部署内では従来はExcelとHTMLの画面設計だったが、大学での経験を活かしツール(XD)での設計を提案しプロジェクト推進に貢献した。<br>
-                                            <br>
-                                            ■概要<br>
-                                            大手素材メーカーJ事業部において、棚卸業務の効率化と在庫精度の向上を目的に、棚卸システムを設計・実装。
-                                            販売・物流管理システムに棚卸機能を追加することで、リアルタイム在庫更新・業務自動化を実現。<br>
-                                            
-
-
-                                        </p>
-                                    </div> -->
-                                </div>
+                <div class="projectDetail">
+                    <div class="project-head">
+                        <h3 class="project-date">2025/07　～2025/11</h3>
+                        <h2 class="section-title">04. RAG技術を活用した社内FAQ構築</h2> 
+                        <div class="project-head-content">
+                            <div class="project-bg">
+                                <img src="img/projects/faq_from_RAG_img.png" alt="社内FAQのイメージ画像">
                             </div>
-                        </div>
-
-
-                        <div class="project-point focus">
-                            <h2 class="section-title">Focus</h2> 
                             
-                            <!-- <div class="focus-grid-container">
-                                <div class="focus-item">
-                                    <div class="focus-icon">
-                                        <img src="img/projects/warning.svg" alt="課題">
-                                    </div>
-                                    <div class="focus-content">
-                                        <h3 class="focus-heading">プロジェクトの課題点</h3>
-                                        <p class="focus-description">
-                                            J事業部の棚卸業務については下記の課題があり、本プロジェクトではその課題を解決するべくシステム化を目指した。
-                                            <br>・各拠点で棚卸方法が異なり、集計・整合に工数がかかっていた
-                                            <br>・在庫情報がシステムにリアルタイム反映されず、差異が頻発していた
-                                            <br>・棚卸時の記録ミスや重複入力など、ヒューマンエラーが多発
-                                        </p>
-                                    </div>
-                                    </div>
-
-                                <div class="focus-item">
-                                    <div class="focus-icon">
-                                        <img src="img/projects/point_project.svg" alt="目的">
-                                    </div>
-                                    <div class="focus-content">
-                                        <h3 class="focus-heading">プロジェクトの目的</h3>
-                                        <p class="focus-description">
-                                            J事業部が抱える工場での棚卸業務の課題を解決するべく下記の大きな目的をもって棚卸システムを開発した．
-                                            <br>
-                                            ・棚卸作業の効率化と業務標準化
-                                            <br>
-                                            ・在庫精度の向上による生産計画の安定化
-                                        </p>
-                                    </div>
-                                    </div>
-                                
-                                <div class="focus-item">
-                                    <div class="focus-icon">
-                                        <img src="img/projects/assigned_role.svg" alt="担当した役割">
-                                    </div>
-                                    <div class="focus-content">
-                                        <h3 class="focus-heading">プロジェクトでの役割</h3>
-                                        <p class="focus-description">
-                                            本プロジェクトでは<span>開発担当者</span>としてアサインされた。<br>
-                                            開発だけでなく製造フェーズ以外にも参加し、<span>一通りの開発プロセスを経験した。</span>
-                                            
-                                        </p>
-                                    </div>
-                                    </div>
-
-                                <div class="focus-item">
-                                    <div class="focus-icon">
-                                        <img src="img/projects/used_skills.svg" alt="技術アイコン">
-                                    </div>
-                                    <div class="focus-content">
-                                        <h3 class="focus-heading">使用した技術/ツールについて</h3>
-                                        <p class="focus-description">
-                                            本プロジェクトでは主に下記の技術を利用した。
-                                            <br>・Webアプリ開発：Java／SQL Server
-                                            <br>・モバイル開発：Swift／Go
-                                            <br>・IoT：RFIDリーダー／バーコードリーダー
-                                            <br>・その他：Adobe XD
-                                        </p>
-                                    </div>
+                            <div class="project-text-container">
+                                <div class="project-concept">
+                                    <h2>
+                                        <span>属人化の解消を目指した、AI実用化への挑戦</span>
+                                    </h2>
                                 </div>
-
-                                
-
-                            </div> -->
-
+                                <div class="project-desc">
+                                    <p class="txt">
+                                        大手素材メーカーのある事業部における問い合わせ対応の属人化・業務負荷の課題を解決するため、生成AI技術（RAG: Retrieval-Augmented Generation）を活用した社内FAQサイトの構築をPoC検証として実施した。
+                                        <br><br>
+                                        ■概要<br>
+                                        A社のある事業部より「AIを活用した業務改善の検証」という要望を受け、規定類やワークフローシステムのデータを対象としたFAQサイトの構築をリードした。<br>
+                                        Azure環境にてA社のネットワーク内で社外に情報が公開されないセキュアなアーキテクチャを実装。海外の社員も利用することを考慮したプロンプトを検討・実装した。一方で、PoCという性質上モデルやデータ整備は最小限のスコープでスタートし、「利用者からみたAIの精度」や「本運用に耐えうるか」を評価・検証するアジャイルなアプローチを採用した。
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+                    </div>
 
-                        <!-- プロジェクトのイメージ -->
-                        <div class="project-image">
-                            <h2 class="section-title">Images</h2> 
-                            <!-- <div class="image-comment">
-                                <p>棚卸システムは既存の<span>基幹システムとのリアルタイムに連携</span></p>
+                    <div class="project-point focus">
+                        <h2 class="section-title">Focus</h2> 
+                        <div class="focus-grid-container">
+                            <div class="focus-item">
+                                <div class="focus-icon">
+                                    <img src="img/projects/warning.svg" alt="課題">
+                                </div>
+                                <div class="focus-content">
+                                    <h3 class="focus-heading">プロジェクトの課題点</h3>
+                                    <p class="focus-description">
+                                        大手素材メーカーのある事業部では、日々の業務において以下の課題を抱えていました。
+                                        <br>・社内からの問い合わせ対応が特定の担当者に集中し、<span>業務の属人化と高負荷が常態化</span>している
+                                        <br>・必要な情報が社内規定やワークフローシステムに散在しており、社員が自己解決しづらい環境である
+                                    </p>
+                                </div>
                             </div>
-                            <div id="image1">
-                                <img src="img/projects/inventory_system_Image1.png" alt="Image1">
+
+                            <div class="focus-item">
+                                <div class="focus-icon">
+                                    <img src="img/projects/point_project.svg" alt="目的">
+                                </div>
+                                <div class="focus-content">
+                                    <h3 class="focus-heading">プロジェクトの目的</h3>
+                                    <p class="focus-description">
+                                        生成AI（RAG技術）を活用した社内FAQサイトを構築し、以下の実現を目指しました。
+                                        <br>・社内規定や過去のナレッジをAIに学習（検索拡張）させ、<span>自己解決率を向上させる</span>
+                                        <br>・海外拠点の社員も利用することを前提とした、多言語対応・プロンプト設計の実装
+                                    </p>
+                                </div>
                             </div>
-                            <div class="image-comment">
-                                <p>本プロジェクトでは<span>デザインツール(XD)を用いて</span>画面デザインを作成。
-                                    結果的に顧客や開発者との設計による認識齟齬を無くし、開発の生産性向上に繋げることができた。
+                            
+                            <div class="focus-item">
+                                <div class="focus-icon">
+                                    <img src="img/projects/assigned_role.svg" alt="担当した役割">
+                                </div>
+                                <div class="focus-content">
+                                    <h3 class="focus-heading">プロジェクトでの役割</h3>
+                                    <p class="focus-description">
+                                        <span>プロジェクトリーダー（PL）およびシステムアーキテクト</span>として参画しました。<br>
+                                        顧客の要望ヒアリングから、Azureの閉域網を活用したセキュアなアーキテクチャ設計、プロンプトの検討、PoCの推進まで一気通貫でリードしました。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="focus-item">
+                                <div class="focus-icon">
+                                    <img src="img/projects/used_skills.svg" alt="技術アイコン">
+                                </div>
+                                <div class="focus-content">
+                                    <h3 class="focus-heading">使用した技術/環境について</h3>
+                                    <p class="focus-description">
+                                        企業データを安全に扱うため、セキュアなクラウド環境を中心に構成しました。
+                                        <br>・クラウド：Azure (App Service / VNet連携)
+                                        <br>・AIモデル：Azure OpenAI Service
+                                        <br>・検索技術：Azure AI Search (ベクトル検索)
+                                        <br>・言語/:C# など
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-image">
+                        <h2 class="section-title">Images</h2> 
+                        <div class="image-comment">
+                            <p>企業情報を外部に漏らさない、<span>Azureの閉域網を活用したセキュアなRAGアーキテクチャ</span>を設計。海外の社員も直感的に利用できるよう、<span>シンプルなチャットUIと適切なプロンプト設計</span>を実装。回答の根拠となる社内ドキュメントへの参照リンクも提示します。</p>
+                        </div>
+                        <div id="image1">  
+                            <img src="img/projects/FAQ_architecht_img.jpg" alt="FAQ UI Image">
+                        </div>
+                        
+                        <div class="image-comment">
+                            <p>PL/アーキテクトとして、顧客フィードバックから対策立案までの一連の分析プロセスを主導し、RAG含めたAIの仕組みを具体的に知るきっかけともなりました。</p>
+                        </div>
+                        <div id="image2">
+                            <img src="img/projects/FAQ_RAG_Image2.png" alt="FAQ UI Image">
+                        </div>
+                    </div><div class="project-impression">
+                        <h2 class="section-title">Impression</h2> 
+                        
+                        <div class="focus-item">
+                            <div class="focus-icon">
+                                <img src="img/projects/change_circle.svg" alt="振り返り">
+                            </div>
+                            <div class="focus-content">
+                                <h3 class="focus-heading">PoCから見えた「AIの壁」と次期展開</h3>
+                                <p class="focus-description">
+                                    本プロジェクトを通して最大の学びとなったのは、<span>「システムを構築するだけでは、実務に耐えうるAIの精度は出ない」</span>という実運用における壁です。PoCリリース後、利用者からは「期待した精度に達していない」という率直なフィードバックをいただきました。しかし、システム自体は現在も継続利用されており、業務効率化への期待値の高さが伺えます。
+                                    <br><br>
+                                    現在、この結果をネガティブに捉えるのではなく、次期予算枠での<span>抜本的な改善策（LLMモデルの見直し、ベクトル検索からセマンティック検索への高度化、RAG精度向上のための社内データのクレンジング作業）</span>を顧客へ具体的に提案しています。
+                                    <br>
                                 </p>
                             </div>
-                            <div id="image2">
-                                <img src="img/projects/inventory_process_prot.png" alt="Image2">
-                            </div>
-                            <div id="image3">
-                                <img src="img/projects/inventory_XD_image.png" alt="Image3">
-                            </div> -->
-
-
-                        </div><!-- プロジェクトのイメージ -->
-                        
-                        <!-- プロジェクトの感想 -->
-                        <div class="project-impression">
-                            <h2 class="section-title">Impression</h2> 
-                            <!-- <div class="focus-item">
-                                    <div class="focus-icon">
-                                        <img src="img/projects/change_circle.svg" alt="振り返り">
-                                    </div>
-                                    <div class="focus-content">
-                                        <h3 class="focus-heading">初めての大規模プロジェクト経験して</h3>
-                                        <p class="focus-description">
-                                            このプロジェクトは私にとって初めての業務システム開発経験であり、<span>開発の難しさと同時に、SI案件へのやりがいを感じた案件であった。</span>
-                                            現場ごとに異なる運用を理解し、最適なUI・操作フローを設計する中で、ユーザビリティの重要性を実感した。
-                                            特に、業務フローの可視化と画面モック作成のために提案したデザインツール（Adobe XD）の導入が受け入れられ、現場担当者との認識のズレを防ぐことができた。
-                                            これはプロジェクト全体の推進力となり、開発チームや現場からも高く評価される結果なった。
-                                            最終的に、<span>棚卸作業の時間が大幅に短縮され、在庫差異の大幅な削減にも成功した</span>。
-                                            ユーザーから「現場作業が楽になった」と直接感謝の言葉をいただけたことが、今でも強く印象に残っている。
-                                        </p>
-                                    </div>
-                                </div> -->
-
-
-                        </div><!-- プロジェクトの感想 -->
-                        
-                    </div>
-                        
-                    </div>
-
-
+                        </div>
                     
-
-                         
-                <!-- </div>articleContainer -->
-                 <ul id="gnav" class="font">
+                    </div></div>
+                
+                <ul id="gnav" class="font">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projectsList.html">Projects</a></li>
                     <li><a href="works.html">Works</a></li>
                     <li><a href="infographics.html">Infographics</a></li> 
                     <li><a href="matching.html">Matching</a></li>  
                 </ul>
-        </div>
-
-            
-
-          
-            
-        <!-- </div>/#container -->
-                                            
-
-        </div><!--/#wrapper-->
-        <div class="chat-Container">
-          <!-- ランチャーボタン -->
-          <button class="chat-launcher" id="chat-launcher" type="button"></button>
-
-          <!-- チャットウィンドウ -->
-          <div class="chat-box" id="chat-box" style="display: none;">
-            <div class="chat-header">
-              AI ChatBot
-              <button class="close-button" id="close-button">×</button>
             </div>
-            <div class="chat-messages" id="chat-messages"></div>
-            <div class="chat-input">
-              <input type="text" id="user-input" placeholder="質問してください..." />
-              <button id="send-button" type="button">送信</button>
-            </div>
-          </div>
-        </div>
+        </div><div class="chat-Container">
+            <button class="chat-launcher" id="chat-launcher" type="button"></button>
 
-      </div>
+            <div class="chat-box" id="chat-box" style="display: none;">
+                <div class="chat-header">
+                    AI ChatBot
+                    <button class="close-button" id="close-button">×</button>
+                </div>
+                <div class="chat-messages" id="chat-messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="質問してください..." />
+                    <button id="send-button" type="button">送信</button>
+                </div>
+            </div>
+        </div>
 
         <div class="col">
-            <a href="#top" class="scroll-up-box mr-120" id="page-top">
-                TOP
-            </a>
+            <a href="#top" class="scroll-up-box mr-120" id="page-top">TOP</a>
         </div>
-        
 
+    </body>
+    
+    <footer>
+        <p>&copy; 2026 Kei Nishizaki. All rights reserved.</p>
+    </footer>
 
-        </body>
-        
-
-        <footer>
-          <p>&copy; 2025 Kei Nishizaki. All rights reserved.</p>
-        </footer>
-
-        <script src="./js/chatbot.js"></script>
+    <script src="./js/chatbot.js"></script>
 </html>

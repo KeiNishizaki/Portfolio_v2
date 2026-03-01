@@ -7,6 +7,10 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   const userid = document.getElementById('userid').value;
   const password = document.getElementById('password').value;
   const msg = document.getElementById('loginMessage');
+  const spinner = document.getElementById('loadingSpinner');
+  
+  // ローディングスピナーを表示
+  spinner.style.display = 'block';
 
 
   const requestBody = { userid, password };
@@ -39,12 +43,14 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     }
   })
   .then(data => {
+    spinner.style.display = 'none';
     msg.textContent = data.message;
     msg.style.color = 'green';
     localStorage.setItem('isLoggedIn', 'true');
     window.location.href = 'index.html';
   })
   .catch(error => {
+    spinner.style.display = 'none';
     console.error('Fetch Error:', error);
     msg.textContent = error.message || '認証中にエラーが発生しました。';
     msg.style.color = 'red';

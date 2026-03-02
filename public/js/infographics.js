@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressBar2 = document.getElementById('progress-bar-2');
     if (progressBar2) {
         // 例: 最大規模システム（180人月）を200人月中の進捗として表現する
-        progressBar2.style.setProperty('--progress-width', `${(180 / 200) * 100}%`);
+        progressBar2.style.setProperty('--progress-width', `${(190 / 200) * 100}%`);
     }
 
     const progressBar3 = document.getElementById('progress-bar-3');
@@ -148,7 +148,7 @@ if (tallCtx) {
                 labels: ['1年目', '2年目', '3年目', '4年目', '5年目'],
                 datasets: [{
                     label: 'プロジェクト件数',
-                    data: [2, 4, 7, 10, 12],
+                    data: [2, 4, 7, 10, 13],
                     backgroundColor: '#4A90E2',
                     borderRadius: 5,
                 }]
@@ -179,9 +179,9 @@ if (tallCtx) {
         certificationTypeChartInstance = new Chart(certificationTypeCtx, {
             type: 'doughnut',
             data: {
-                labels: ['IPA 4個', 'Microsoft関連 5個', 'その他 2個'],
+                labels: ['IPA 4個', 'Microsoft関連 6個', 'その他 2個'],
                 datasets: [{
-                    data: [4, 5, 2],
+                    data: [4, 6, 2],
                     backgroundColor: ['#668cb6ff', '#79b8b6ff', '#aca8adff'],
                     hoverOffset: 10
                 }]

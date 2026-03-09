@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>NISHIZAKI　KEI</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link href="css\common.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/others.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+  <script src="js/about.js"></script>
+  <script src="js/others.js" defer></script>
+  <!-- <script src="js/startWindow.js"></script> -->
+  <!-- <script src="./js/chatbot.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="js/auth.js"></script>
+</head>
+<body>
+  <header>
+    <div id="about">
+      <div id="aboutInner" class="cf">
+        <dl>
+          <dt class="font">PROFILE :</dt>
+          <dd>西崎慧　　Nishizaki　Kei<br>
+            和歌山県和歌山市　出身<br>
+            和歌山大学システム工学部メディアデザインメジャー　卒業<br>
+          </dd>
+          <dt class="font">CONTACT :</dt>
+          <dd><a href="mailto:nszkki.19981116@gmail.com" target="_blank">nszkki.19981116@gmail.com</a></dd>
+          <dt class="font">ADDRESS :</dt>
+          <dd class="last">大阪府大阪市<br>
+            Osakashi, Osakafu Japan</dd>
+        </dl>
+        <div class="right"><img src="img/myimage.jpg" alt="" width="140"></div>
+      </div>
+    </div>
+  </header>
+  <div id="wrapper">
+    <div id="header">
+      <h1 id="logo"><a href="index.html"><img src="img/nishizaki-logo.png" alt="Nishizaki"></a></h1>
+      <div id="btnAbout" class="font">
+        <a href="javascript:clickBtn1()">About</a>
+      </div>
+      <div id="btnClose" class="font">
+        <a href="javascript:clickBtn1()">Close</a>
+      </div>
+    </div>
+    <div id="container">
+      <div id="articleContainer">
+        <div class="section others-section" id="othersSection">
+          <div class="mv_title">
+            <h2 class="site_title">Others</h2>
+            <div class="typed_wrap">
+              <p>このページでは、技術検証や過去に制作したアプリケーションなどについて載せています。</p>
+            </div>
+          </div>
+          <!-- <div class="image-slide">
+            <img src="img/my_visual.png" alt="Others Introduction" class="slide-image">
+          </div> -->
+          <div class="others-content">
+           
+            <div class="card">
+              <img src="img/others/problemFromAI.PNG" alt="Works" class="card-image">
+              <h3>AI問題集メーカー</h3>
+              <p>AIを活用した問題集アプリで、4択問題を入力したテーマに合わせて自動で生成してくれるツール</p>
+              <a href="https://witty-coast-0d5c87600.4.azurestaticapps.net/" class="card-link">詳細を見る</a>
+            </div>
+            <div class="card">
+              <img src="img/others/hirukime.PNG" alt="Projects" class="card-image">
+              <h3>Hirumeshi KimeKime</h3>
+              <p>複数人でのランチ決定支援アプリで、Antigravityを使ったAI駆動型ツールを試すために実装したアプリ</p>
+              <a href="https://ashy-cliff-06c480600.6.azurestaticapps.net/" class="card-link">詳細を見る</a>
+            </div>
+            <div class="card">
+              <img src="img/others/matching.jpg" alt="Matching Site" class="card-image">
+              <h3>Match with company</h3>
+              <p>御社が求める人材と私のマッチング診断をするツール</p>
+              <a href="matching.html" class="card-link">詳細を見る</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul id="gnav" class="font">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projectsList.html">Projects</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="infographics.html">Infographics</a></li> 
+        <li><a href="others.html">Others</a></li> 
+      </ul>
+    </div>
+    <div class="chat-Container">
+      <button class="chat-launcher" id="chat-launcher" type="button"></button>
+      <div class="chat-box" id="chat-box" style="display: none;">
+        <div class="chat-header">
+          AI ChatBot
+          <button class="close-button" id="close-button">×</button>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+          <input type="text" id="user-input" placeholder="質問してください..." />
+          <button id="send-button" type="button">送信</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <a href="#top" class="scroll-up-box mr-120" id="page-top">
+        TOP
+      </a>
+    </div>
+  </div>
+</body>
+<footer>
+          <p>&copy; 2025 Kei Nishizaki. All rights reserved.</p>
+        </footer>
+        <script src="js/chatbot.js"></script>
+</html>

@@ -431,6 +431,8 @@ p.tool {
  padding: 8px;
  margin-top: 4px;
  box-sizing: border-box;
+ border: 1px solid #ccc;
+ border-radius: 4px;
 }
 .login-container button {
  width: 100%;
